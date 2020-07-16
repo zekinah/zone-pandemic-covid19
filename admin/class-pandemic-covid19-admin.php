@@ -100,7 +100,7 @@ class Pandemic_Covid19_Admin {
 			'manage_options', 			//Capability
 			'pandemic-covid19', 				//Page ID
 			array(&$this, 'zoneOptionsPage'),		//Functions
-			'dashicons-sos', 						//Favicon
+			'dashicons-image-filter', 						//Favicon
 			99							//Position
 		);
 	}

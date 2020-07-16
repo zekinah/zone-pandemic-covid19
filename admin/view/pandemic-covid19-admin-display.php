@@ -36,29 +36,47 @@
         ?>
         <div class="tab-content">
             <div id="tab-0" class="container-fluid tab-pane nav-tab-active active">
-                <h1 class="zone-title text-center mt-5">Pandemic Covid19 Data</h1>
-                <p><strong>Information:</strong> This plugin displays the data records of all cases of the Pandemic Covid19 all over the world.</p>
+                <h1 class="zone-title text-center mt-5">Pandemic Covid-19 Data</h1>
+                <p><strong>Information:</strong> This plugin displays the recorded global data of all for the total statistics of the Covid-19.</p>
                 <div class="row">
-                    <div class="col-md-6">
+                    <div class="col-md-12">
                         <div class="zone-home form">
                             <div class="card">
-                                <div class="form-group">
-                                    <label><strong>Zone IO Shortcode</strong></label>
-                                    <input class="form-control txt-shortcode" type="text" value="[zone-covid19]" readonly>
-                                    <small class="pull-left">Examples</small><br>
-                                    <ul>
-                                        <li>[zone-covid19 country="US"]</li>
-                                        <li>[zone-covid19 continent="North America"]</li>
-                                        <li>[zone-covid19 background="#1c1c1c"]</li>
-                                    </ul>
-                                </div>
-                                <div class="form-group">
-                                    <label><strong>Zone IO using Category ID Shortcode</strong></label>
-                                    <input class="form-control txt-shortcode" type="text" value='[zone-covid19-table]' readonly>
-                                    <small class="pull-left">Shows all cases.</small>
-                                    <ul>
-                                        <li>[zone-covid19-table background="#1c1c1c"]</li>
-                                    </ul>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><strong>Zone IO Shortcode</strong></label>
+                                            <input class="form-control txt-shortcode" type="text" value="[zone-covid19]" readonly>
+                                            <small class="pull-left">Show all details</small><br>
+                                            <strong class="pull-left">Attributes Available for Statistic</strong><br>
+                                            <ul>
+                                                <li>country</li>
+                                                <li>continent</li>
+                                                <li>background</li>
+                                            </ul>
+                                            <strong class="pull-left">Examples</strong><br>
+                                            <ul>
+                                                <li>[zone-covid19 country="US"]</li>
+                                                <li>[zone-covid19 continent="North America"]</li>
+                                                <li>[zone-covid19 background="#1c1c1c"]</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label><strong>Zone IO using Category ID Shortcode</strong></label>
+                                            <input class="form-control txt-shortcode" type="text" value='[zone-covid19-table]' readonly>
+                                            <small class="pull-left">Shows all cases.</small><br>
+                                            <strong class="pull-left">Attributes Available for Table</strong><br>
+                                            <ul>
+                                                <li>background</li>
+                                            </ul>
+                                            <strong class="pull-left">Examples</strong><br>
+                                            <ul>
+                                            <li>[zone-covid19-table background="#1c1c1c"]</li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -66,6 +84,9 @@
                 </div>
                 <p class="mt-2"><strong>Credits</strong></p>
                 <p>https://github.com/disease-sh/API - <a href="//github.com/disease-sh/API/blob/master/privacy.md">Privacy Policy</a></p>
+                <p class="mt-2"><strong>Sources</strong></p>
+                <p><a href="//github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></p>
+                <p><a href="//github.com/nytimes/covid-19-data">New York Times, Worldometers</a></p>
             </div>
         </div>
     </div>

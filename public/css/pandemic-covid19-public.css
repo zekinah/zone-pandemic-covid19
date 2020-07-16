@@ -2,3 +2,13 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
+
+ section#zn-covid19 h2 {
+    margin: auto;
+    margin-bottom: 1rem;
+}
+
+section#zn-covid19 h4 {
+    margin: auto;
+    margin-bottom: 1rem;
+}
