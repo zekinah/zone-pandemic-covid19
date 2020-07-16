@@ -3,12 +3,24 @@
  * included in this file.
  */
 
- section#zn-covid19 h2 {
-    margin: auto;
+ #zn-covid19 {
+     max-width: 120rem;
+     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+ }
+h1, h2, 
+h3, h4, 
+h5, h6 {
+    margin: auto !important;
     margin-bottom: 1rem;
 }
-
-section#zn-covid19 h4 {
-    margin: auto;
-    margin-bottom: 1rem;
+.zn-title {
+    display: flex;
+}
+.zn-title .zn-subtitle {
+    max-width: 100%;
+    width: 100%;
+}
+.zn-statistics {
+    max-height: 100%;
+    padding: 1rem 0;
 }
