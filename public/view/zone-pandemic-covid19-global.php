@@ -31,7 +31,7 @@
                             <div class="emoji mr-2">🤧</div>
                             <div class="zn-subtitle">
                                 <h2 class="title is-3"><?= __('Active') ?></h2>
-                                <h5 class="subtitle is-6 mb-3">(<?= __('+onePerMillion') ?>)</h5>
+                                <h5 class="subtitle is-6">(<?= __('+onePerMillion') ?>)</h5>
                             </div>
                         </div>
                         <div class="zn-statistics">
