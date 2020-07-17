@@ -3,10 +3,16 @@
  * included in this file.
  */
 
- #zn-covid19 {
-     max-width: 120rem;
-     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
- }
+#zn-covid19 {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 120rem;
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+}
+#zn-covid19 .by-country {
+    width: 27.5%;
+    margin: .75rem;
+}
 h1, h2, 
 h3, h4, 
 h5, h6 {
@@ -23,4 +29,13 @@ h5, h6 {
 .zn-statistics {
     max-height: 100%;
     padding: 1rem 0;
+}
+.flag {
+    width: 50px;
+}
+.country-stats {
+    padding: 1rem 0;
+}
+.country-stats__values {
+    padding: 1rem 2rem;
 }

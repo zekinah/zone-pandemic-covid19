@@ -87,18 +87,27 @@ class Pandemic_Covid19_Public {
 
 	public function zoneCovidContent( $atts )
 	{
-		$tab = '';
 		$atts = shortcode_atts(
 			array(
 				'country' => '',
 				'continent' => '',
-				'background' => '',
 			),
 			$atts,
 			'zone-covid19'
 		);
 		ob_start();
-			require_once('view/zone-pandemic-covid19-data.php');
+		// Global Record
+		if (empty($atts['country']) && empty($atts['continent'])){
+			require_once('view/zone-pandemic-covid19-global.php');
+		}
+		// By Continent Record
+		if(empty($atts['country']) && $atts['continent']) {
+			require_once('view/zone-pandemic-covid19-continent.php');
+		}
+		// By Country Record
+		if(empty($atts['continent']) && $atts['country']) {
+			require_once('view/zone-pandemic-covid19-country.php');
+		}
 		return ob_get_clean();
 	}
 

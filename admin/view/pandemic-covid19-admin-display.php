@@ -52,7 +52,6 @@
                                             <ul>
                                                 <li>country</li>
                                                 <li>continent</li>
-                                                <li>background</li>
                                             </ul>
                                             <strong class="pull-left">Examples</strong><br>
                                             <ul>
@@ -69,11 +68,11 @@
                                             <small class="pull-left">Shows all cases.</small><br>
                                             <strong class="pull-left">Attributes Available for Table</strong><br>
                                             <ul>
-                                                <li>background</li>
+                                                <li>None</li>
                                             </ul>
                                             <strong class="pull-left">Examples</strong><br>
                                             <ul>
-                                            <li>[zone-covid19-table background="#1c1c1c"]</li>
+                                            <li>[zone-covid19-table]</li>
                                             </ul>
                                         </div>
                                     </div>
