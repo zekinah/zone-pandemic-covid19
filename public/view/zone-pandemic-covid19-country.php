@@ -14,8 +14,9 @@
  */
 ?>
 <input id="country" type="hidden" value="<?=$atts['country']?>">
-<section id="zn-covid19" class="section">
+<section id="zn-covid19-country" class="section">
     <div class="card by-country">
+        <div class="zn-loading"><span class="covid19">🦠</span></div>
         <div class="card-content">
             <div class="zn-title">
                 <div class="flag mr-3"><img src="🗺️" alt="<?=$atts['country']?>"></div>

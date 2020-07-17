@@ -2,14 +2,17 @@
  * All of the CSS for your public-facing functionality should be
  * included in this file.
  */
-
-#zn-covid19 {
+ #zn-covid19 {
+    max-width: 120rem;
+    font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
+ }
+#zn-covid19-country {
     display: flex;
     flex-wrap: wrap;
     max-width: 120rem;
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif;
 }
-#zn-covid19 .by-country {
+#zn-covid19-country .by-country {
     width: 27.5%;
     margin: .75rem;
 }
@@ -39,3 +42,27 @@ h5, h6 {
 .country-stats__values {
     padding: 1rem 2rem;
 }
+#zn-covid19 .zn-loading {
+    padding: 25px;
+}
+#zn-covid19 .zn-loading .covid19 {
+  display: block;
+  height: 75px;
+  width: 75px;
+  animation: roll 2s infinite;
+  transform: rotate(30deg);
+  margin: auto;
+}
+
+@keyframes roll {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.card-content, .zn-covid19__content {
+    display: none;
+}
+

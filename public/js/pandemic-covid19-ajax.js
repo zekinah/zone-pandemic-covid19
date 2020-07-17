@@ -23,6 +23,8 @@
 		$("#zn-global-criticalPerM").append(Number(data.criticalPerOneMillion).toLocaleString());
 		$("#zn-global-deaths").append(Number(data.deaths).toLocaleString());
 		$("#zn-global-deathsPerM").append(Number(data.deathsPerOneMillion).toLocaleString());
+		$(".zn-loading").fadeOut();
+		$(".zn-covid19__content").fadeIn();
 	};
 
 	function byContinent(data) {
@@ -51,6 +53,8 @@
 		$("#zn-country-criticalPerM").append(Number(data.criticalPerOneMillion).toLocaleString());
 		$("#zn-country-deaths").append(Number(data.deaths).toLocaleString());
 		$("#zn-country-deathsPerM").append(Number(data.deathsPerOneMillion).toLocaleString());
+		$(".zn-loading").fadeOut();
+		$(".card-content").fadeIn();
 	};
 
 
@@ -78,7 +82,6 @@
 				dataType: 'json',
 			});
 			byCountry(result);
-			console.log(result);
 		} catch (error) {
 			console.error(error);
 		}
