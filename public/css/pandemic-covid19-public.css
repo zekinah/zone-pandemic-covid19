@@ -43,13 +43,14 @@ h5, h6 {
 .flag {
     width: 50px;
 }
+#zn-continent-globe {
+    font-size: 30px;
+}
+.continent-stats,
 .country-stats {
     padding-bottom: 15px;
     display: flex;
 }
-/* .country-stats__values {
-    padding: 1rem 2rem;
-} */
 .zn-loading {
     padding: 25px;
 }
@@ -61,7 +62,6 @@ h5, h6 {
   transform: rotate(30deg);
   margin: auto;
 }
-
 @keyframes roll {
   0% {
     transform: rotate(0);

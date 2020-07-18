@@ -83,16 +83,7 @@ class Pandemic_Covid19_Public {
 	{
 		add_shortcode( 'zone-covid19', array(&$this, 'zoneCovidContent') );
 		add_shortcode( 'zone-covid19-table', array(&$this, 'zoneCovidTableContent') );
-	}
-
-	public function zoneCovidHead($atts)
-	{
-		$zn_country = ((empty($atts['continent']) && $atts['country']) ? $atts['country'] : '');
-		$zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
-		echo '<script>
-		var zn_country = "'.$zn_country.'"; 
-		var zn_global = "'.$zn_global.'"; 
-		</script>';
+		add_action('wp_head',  array(&$this,'zoneCovidHead'));
 	}
 
 	public function zoneCovidContent( $atts )
@@ -106,7 +97,6 @@ class Pandemic_Covid19_Public {
 			'zone-covid19'
 		);
 
-		add_action('wp_head',  array(&$this,'zoneCovidHead'));
 		do_action( 'wp_head', $atts );
 
 		ob_start();
@@ -123,6 +113,18 @@ class Pandemic_Covid19_Public {
 			require_once('view/zone-pandemic-covid19-country.php');
 		}
 		return ob_get_clean();
+	}
+
+	public function zoneCovidHead($atts)
+	{
+		$zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
+		$zn_continent = (empty($atts['country']) && $atts['continent'] ? $atts['continent'] : '');
+		$zn_country = (empty($atts['continent']) && $atts['country'] ? $atts['country'] : '');
+		echo '<script>
+		var zn_global = "'.$zn_global.'"; 
+		var zn_continent = "'.$zn_continent.'"; 
+		var zn_country = "'.$zn_country.'";
+		</script>';
 	}
 
 	public function zoneCovidTableContent( $atts )
