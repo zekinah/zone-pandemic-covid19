@@ -85,6 +85,16 @@ class Pandemic_Covid19_Public {
 		add_shortcode( 'zone-covid19-table', array(&$this, 'zoneCovidTableContent') );
 	}
 
+	public function zoneCovidHead($atts)
+	{
+		$zn_country = ((empty($atts['continent']) && $atts['country']) ? $atts['country'] : '');
+		$zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
+		echo '<script>
+		var zn_country = "'.$zn_country.'"; 
+		var zn_global = "'.$zn_global.'"; 
+		</script>';
+	}
+
 	public function zoneCovidContent( $atts )
 	{
 		$atts = shortcode_atts(
@@ -95,6 +105,10 @@ class Pandemic_Covid19_Public {
 			$atts,
 			'zone-covid19'
 		);
+
+		add_action('wp_head',  array(&$this,'zoneCovidHead'));
+		do_action( 'wp_head', $atts );
+
 		ob_start();
 		// Global Record
 		if (empty($atts['country']) && empty($atts['continent'])){

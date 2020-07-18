@@ -70,7 +70,6 @@ h5, h6 {
     transform: rotate(360deg);
   }
 }
-.card-content, .zn-covid19__content {
+.zn-covid19__content {
     display: none;
 }
-

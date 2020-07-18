@@ -13,7 +13,6 @@
  * 
  */
 ?>
-<input id="country" type="hidden" value="PH">
 <section id="zn-covid19" class="section">
     <div class="zn-loading"><span class="covid19">🦠</span></div>
     <div class="zn-covid19__content">
