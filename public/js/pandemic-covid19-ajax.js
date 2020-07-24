@@ -114,18 +114,27 @@
 				dataType: 'json',	
 				success: function(json){
 					$('#tbl-covid19data').DataTable({
+						processing: true,
+						lengthMenu: [20, 50, 100, 200],
 						data: json,
 						columns: [
+							{
+								"render": function (data, type, json, meta) {
+									return '<img src="'+json.countryInfo.flag+'" alt="'+json.countryInfo.iso2+'">';
+								}
+							},
 							{ "data": "country" },
+							{ "data": "active" },
 							{ "data": "cases" },
 							{ "data": "tests" },
 							{ "data": "recovered" },
-							{ "data": "deaths" }
+							{ "data": "deaths" },
 						]
 					});
+					$(".zn-loading").fadeOut();
+					$(".zn-covid19__content").fadeIn();
 				}
 			});
-			
 		} catch (error) {
 			console.error(error);
 		}

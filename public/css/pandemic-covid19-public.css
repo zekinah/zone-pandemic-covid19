@@ -16,7 +16,7 @@
 	font-display: swap;
 	src: url(./fonts/inter/Inter-italic-var.woff2) format("woff2");
 }
-#zn-covid19 {
+#zn-covid19, #zn-covid19-table {
     max-width: 120rem;
     font-family: "Inter var", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, sans-serif !important;
 }
