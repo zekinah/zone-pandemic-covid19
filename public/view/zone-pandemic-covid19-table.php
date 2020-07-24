@@ -12,5 +12,14 @@
  * @subpackage Pandemic_Covid19/public/partials
  */
 ?>
-
-<!-- This file should primarily consist of HTML with a little bit of PHP. -->
+<table id="tbl-covid19data" class="display nowrap" style="width:100%">
+    <thead>
+        <tr>
+            <th>Country</th>
+            <th>Cases</th>
+            <th>Tested</th>
+            <th>Recovered</th>
+            <th>Deaths</th>
+        </tr>
+    </thead>
+</table>

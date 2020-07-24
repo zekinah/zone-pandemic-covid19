@@ -3,6 +3,7 @@
 	$ = jQuery.noConflict();
 	$(window).on('load', function () {
 		console.log('API in Live');
+		/** Cards */
 		if (zn_global !== null || zn_global !== '') {
 			let api_url = "https://disease.sh/v3/covid-19/all?yesterday=true&allowNull=true";
 			fetchApiData(api_url, 'global');
@@ -14,6 +15,11 @@
 		if (zn_country !== null || zn_country !== '') {
 			let api_url = "https://disease.sh/v3/covid-19/countries/" + zn_country;
 			fetchApiData(api_url, 'country');
+		}
+		/** Table */
+		if (zn_globaltable === 'all') {
+			let api_url = "https://disease.sh/v3/covid-19/countries";
+			fetchApiDataTable(api_url);
 		}
 	});
 
@@ -92,10 +98,33 @@
 				byAll(result);
 			} else if (type === 'continent') {
 				byContinent(result);
-				console.log(result);
 			} else if (type === 'country') {
 				byCountry(result);
 			}
+			
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	async function fetchApiDataTable(api_url) {
+		try {
+			await $.ajax({
+				url: api_url,
+				dataType: 'json',	
+				success: function(json){
+					$('#tbl-covid19data').DataTable({
+						data: json,
+						columns: [
+							{ "data": "country" },
+							{ "data": "cases" },
+							{ "data": "tests" },
+							{ "data": "recovered" },
+							{ "data": "deaths" }
+						]
+					});
+				}
+			});
 			
 		} catch (error) {
 			console.error(error);
