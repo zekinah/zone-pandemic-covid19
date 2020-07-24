@@ -1,5 +1,3 @@
-<img src="https://ps.w.org/zone-redirect/assets/banner-772x250.png" alt="Banner" width="100%">
-
 # Zone Pandemic Covid19 for Wordpress
 
 ![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/zone-redirect)
