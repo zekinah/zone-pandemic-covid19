@@ -72,9 +72,9 @@
             </div>
         </div>
     </div>
-    <p class="mt-2"><strong>Credits</strong></p>
-    <p>https://github.com/disease-sh/API - <a href="//github.com/disease-sh/API/blob/master/privacy.md">Privacy Policy</a></p>
-    <p class="mt-2"><strong>Sources</strong></p>
+    <p class="mt-2"><strong>API Used: </strong></p>
+    <p><a href="https://github.com/disease-sh/API">Disease API</a> - <a href="//github.com/disease-sh/API/blob/master/privacy.md">Privacy Policy</a></p>
+    <p class="mt-2"><strong>Data Sources:</strong></p>
     <p><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></p>
     <p><a href="https://github.com/nytimes/covid-19-data">New York Times</a></p>
     <p><a href="https://www.worldometers.info/">Worldometers</a></p>

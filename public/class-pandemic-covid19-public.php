@@ -123,8 +123,8 @@ class Pandemic_Covid19_Public {
 		$zn_country = (empty($atts['continent']) && $atts['country'] ? $atts['country'] : '');
 		echo '<script>
 		var zn_global = "'.$zn_global.'"; 
-		var zn_continent = "'.str_replace(",","%2C",$zn_continent).'"; 
-		var zn_country = "'.str_replace(",","%2C",$zn_country).'";
+		var zn_continent = "'.rawurlencode($zn_continent).'"; 
+		var zn_country = "'.rawurlencode($zn_country).'";
 		var zn_globaltable = "";
 		</script>';
 	}

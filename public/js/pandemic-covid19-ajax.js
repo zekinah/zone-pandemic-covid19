@@ -42,27 +42,19 @@
 	};
 
 	function byContinent(data) {
-		let logo = '';
-		if(data.continent === 'North America' || data.continent === 'South America') {
-			logo = '🌎';
-		} else if(data.continent === 'Europe' || data.continent === 'Africa') {
-			logo = '🌍';
-		} else if(data.continent === 'Asia' || data.continent === 'Ocenia') {
-			logo = '🌏';
-		} 
-		$("#zn-continent-name").append(data.continent);
-		$("#zn-continent-globe").append(logo);
-		$("#zn-continent-population").append(Number(data.population).toLocaleString());
-		$("#zn-continent-cases").append(Number(data.cases).toLocaleString());
-		$("#zn-continent-updates").text(timestampToTime(data.updated, 1));
-		$("#zn-continent-active").append(Number(data.active).toLocaleString());
-		$("#zn-continent-activePerM").append(Number(data.activePerOneMillion).toLocaleString());
-		$("#zn-continent-recovered").append(Number(data.recovered).toLocaleString());
-		$("#zn-continent-recoveredPerM").append(Number(data.recoveredPerOneMillion).toLocaleString());
-		$("#zn-continent-critical").append(Number(data.critical).toLocaleString());
-		$("#zn-continent-criticalPerM").append(Number(data.criticalPerOneMillion).toLocaleString());
-		$("#zn-continent-deaths").append(Number(data.deaths).toLocaleString());
-		$("#zn-continent-deathsPerM").append(Number(data.deathsPerOneMillion).toLocaleString());
+		console.log(data);
+		// $.each(data, function (c) {
+			var logo = '';
+			if(data.continent === 'North America' || data.continent === 'South America') {
+				logo = '🌎';
+			} else if(data.continent === 'Europe' || data.continent === 'Africa') {
+				logo = '🌍';
+			} else if(data.continent === 'Asia' || data.continent === 'Ocenia') {
+				logo = '🌏';
+			}
+			var template_html = '<div class="column is-6"> <div class="card by-continent"> <div class="card-content"> <div class="zn-title"> <div id="zn-continent-globe" class="continent mr-3">'+logo+'</div><div class="zn-subtitle"> <p id="zn-continent-name" class="title is-4">'+data.continent+'</p><p id="zn-continent-population" class="subtitle is-6 mb-3">Population: '+Number(data.population).toLocaleString()+'</p></div></div><div class="zn-statistics"> <div class="continent-stats"> <span class="emoji mr-1">🧑🏻‍🤝‍🧑🏽</span> <p class="title is-6"> Cases: <span id="zn-continent-cases" class="title is-4">'+Number(data.cases).toLocaleString()+'</span></p></div><div class="columns is-desktop"> <div class="column"> <div class="continent-stats"> <div class="mr-1"><span class="emoji">🤧</span></div><div class="continent-stats__values"> <span class="title is-6">Active</span> <p id="zn-continent-active" class="title is-5">'+Number(data.active).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-continent-activePerM">'+Number(data.activePerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="continent-stats"> <div class="mr-1"><span class="emoji">😄</span></div><div class="continent-stats__values"> <span class="title is-6">Recovered</span> <p id="zn-continent-recovered" class="title is-5">'+Number(data.recovered).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-continent-recoveredPerM">'+Number(data.recoveredPerOneMillion).toLocaleString()+'</span>)</p></div></div></div><div class="column"> <div class="continent-stats"> <div class="mr-1"><span class="emoji">😷</span></div><div class="continent-stats__values"> <span class="title is-6">Critical</span> <p id="zn-continent-critical" class="title is-5">'+Number(data.critical).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-continent-criticalPerM">'+Number(data.criticalPerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="continent-stats"> <div class="mr-1"><span class="emoji">💀</span></div><div class="continent-stats__values"> <span class="title is-6">Deaths</span> <p id="zn-continent-deaths" class="title is-5">'+Number(data.deaths).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-continent-deathsPerM">'+Number(data.deathsPerOneMillion).toLocaleString()+'</span>)</p></div></div></div></div></div></div></div></div>';
+			$('#zn-covid19-continent').append(template_html);
+		// });
 		$(".zn-loading").fadeOut();
 		$(".zn-covid19__content").fadeIn();
 	};
@@ -71,7 +63,7 @@
 		$.each(data, function (z) {
 			var template_html = '<div class="column is-6"> <div class="card by-country"> <div class="card-content"> <div class="zn-title"> <div class="flag mr-3"><img src="'+data[z].countryInfo.flag+'" alt="'+data[z].countryInfo.iso2+'"></div><div class="zn-subtitle"> <p id="zn-country-name" class="title is-4">'+data[z].country+'</p><p id="zn-country-population" class="subtitle is-6 mb-3">Population: '+Number(data[z].population).toLocaleString()+'</p></div></div><div class="zn-statistics"> <div class="country-stats"> <span class="emoji mr-1">🧑🏻‍🤝‍🧑🏽</span> <p class="title is-6">Cases:<span id="zn-country-cases" class="title is-4">'+Number(data[z].cases).toLocaleString()+'</span></p></div><div class="columns is-desktop"> <div class="column"> <div class="country-stats"> <div class="mr-1"><span class="emoji">🤧</span></div><div class="country-stats__values"> <span class="title is-6">Active</span> <p id="zn-country-active" class="title is-5">'+Number(data[z].active).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-activePerM">'+Number(data[z].activePerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="country-stats"> <div class="mr-1"><span class="emoji">😄</span></div><div class="country-stats__values"> <span class="title is-6">Recovered</span> <p id="zn-country-recovered" class="title is-5">'+Number(data[z].recovered).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-recoveredPerM">'+Number(data[z].recoveredPerOneMillion).toLocaleString()+'</span>)</p></div></div></div><div class="column"> <div class="country-stats"> <div class="mr-1"><span class="emoji">😷</span></div><div class="country-stats__values"> <span class="title is-6">Critical</span> <p id="zn-country-critical" class="title is-5">'+Number(data[z].critical).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-criticalPerM">'+Number(data[z].criticalPerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="country-stats"> <div class="mr-1"><span class="emoji">💀</span></div><div class="country-stats__values"> <span class="title is-6">Deaths</span> <p id="zn-country-deaths" class="title is-5">'+Number(data[z].deaths).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-deathsPerM">'+Number(data[z].deathsPerOneMillion).toLocaleString()+'</span>)</p></div></div></div></div></div></div></div></div>';
 			$('#zn-covid19-country').append(template_html);
-		})
+		});
 		$(".zn-loading").fadeOut();
 		$(".zn-covid19__content").fadeIn();
 	};
@@ -90,7 +82,6 @@
 			} else if (type === 'continent') {
 				byContinent(result);
 			} else if (type === 'country') {
-				console.log(result);
 				byCountry(result);
 			}
 			
@@ -99,6 +90,7 @@
 		}
 	}
 
+	/** Generate Data Table from API */
 	async function fetchApiDataTable(api_url) {
 		try {
 			await $.ajax({
