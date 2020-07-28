@@ -125,6 +125,7 @@ class Pandemic_Covid19_Public {
 		var zn_global = "'.$zn_global.'"; 
 		var zn_continent = "'.$zn_continent.'"; 
 		var zn_country = "'.$zn_country.'";
+		var zn_globaltable = "";
 		</script>';
 	}
 

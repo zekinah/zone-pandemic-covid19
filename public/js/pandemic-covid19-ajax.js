@@ -123,12 +123,36 @@
 									return '<img src="'+json.countryInfo.flag+'" alt="'+json.countryInfo.iso2+'">';
 								}
 							},
-							{ "data": "country" },
-							{ "data": "active" },
-							{ "data": "cases" },
-							{ "data": "tests" },
-							{ "data": "recovered" },
-							{ "data": "deaths" },
+							{ 
+								"render": function (data, type, json, meta) {
+									return '<strong>'+json.country+'</strong>';
+								}
+							},
+							{ 
+								"render": function (data, type, json, meta) {
+									return Number(json.active).toLocaleString();
+								}
+							},
+							{ 
+								"render": function (data, type, json, meta) {
+									return Number(json.cases).toLocaleString();
+								}
+							},
+							{ 
+								"render": function (data, type, json, meta) {
+									return Number(json.tests).toLocaleString();
+								}
+							},
+							{ 
+								"render": function (data, type, json, meta) {
+									return Number(json.recovered).toLocaleString();
+								}
+							},
+							{ 
+								"render": function (data, type, json, meta) {
+									return Number(json.deaths).toLocaleString();
+								}
+							},
 						]
 					});
 					$(".zn-loading").fadeOut();
