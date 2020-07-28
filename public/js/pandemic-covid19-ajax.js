@@ -68,19 +68,10 @@
 	};
 
 	function byCountry(data) {
-		$('.flag img').attr('src', data.countryInfo.flag);
-		$("#zn-country-name").append(data.country);
-		$("#zn-country-population").append(Number(data.population).toLocaleString());
-		$("#zn-country-cases").append(Number(data.cases).toLocaleString());
-		$("#zn-country-updates").text(timestampToTime(data.updated, 1));
-		$("#zn-country-active").append(Number(data.active).toLocaleString());
-		$("#zn-country-activePerM").append(Number(data.activePerOneMillion).toLocaleString());
-		$("#zn-country-recovered").append(Number(data.recovered).toLocaleString());
-		$("#zn-country-recoveredPerM").append(Number(data.recoveredPerOneMillion).toLocaleString());
-		$("#zn-country-critical").append(Number(data.critical).toLocaleString());
-		$("#zn-country-criticalPerM").append(Number(data.criticalPerOneMillion).toLocaleString());
-		$("#zn-country-deaths").append(Number(data.deaths).toLocaleString());
-		$("#zn-country-deathsPerM").append(Number(data.deathsPerOneMillion).toLocaleString());
+		$.each(data, function (z) {
+			var template_html = '<div class="column is-6"> <div class="card by-country"> <div class="card-content"> <div class="zn-title"> <div class="flag mr-3"><img src="'+data[z].countryInfo.flag+'" alt="'+data[z].countryInfo.iso2+'"></div><div class="zn-subtitle"> <p id="zn-country-name" class="title is-4">'+data[z].country+'</p><p id="zn-country-population" class="subtitle is-6 mb-3">Population: '+Number(data[z].population).toLocaleString()+'</p></div></div><div class="zn-statistics"> <div class="country-stats"> <span class="emoji mr-1">🧑🏻‍🤝‍🧑🏽</span> <p class="title is-6">Cases:<span id="zn-country-cases" class="title is-4">'+Number(data[z].cases).toLocaleString()+'</span></p></div><div class="columns is-desktop"> <div class="column"> <div class="country-stats"> <div class="mr-1"><span class="emoji">🤧</span></div><div class="country-stats__values"> <span class="title is-6">Active</span> <p id="zn-country-active" class="title is-5">'+Number(data[z].active).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-activePerM">'+Number(data[z].activePerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="country-stats"> <div class="mr-1"><span class="emoji">😄</span></div><div class="country-stats__values"> <span class="title is-6">Recovered</span> <p id="zn-country-recovered" class="title is-5">'+Number(data[z].recovered).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-recoveredPerM">'+Number(data[z].recoveredPerOneMillion).toLocaleString()+'</span>)</p></div></div></div><div class="column"> <div class="country-stats"> <div class="mr-1"><span class="emoji">😷</span></div><div class="country-stats__values"> <span class="title is-6">Critical</span> <p id="zn-country-critical" class="title is-5">'+Number(data[z].critical).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-criticalPerM">'+Number(data[z].criticalPerOneMillion).toLocaleString()+'</span>)</p></div></div><div class="country-stats"> <div class="mr-1"><span class="emoji">💀</span></div><div class="country-stats__values"> <span class="title is-6">Deaths</span> <p id="zn-country-deaths" class="title is-5">'+Number(data[z].deaths).toLocaleString()+'</p><p class="subtitle is-6">(+<span id="zn-country-deathsPerM">'+Number(data[z].deathsPerOneMillion).toLocaleString()+'</span>)</p></div></div></div></div></div></div></div></div>';
+			$('#zn-covid19-country').append(template_html);
+		})
 		$(".zn-loading").fadeOut();
 		$(".zn-covid19__content").fadeIn();
 	};
@@ -99,6 +90,7 @@
 			} else if (type === 'continent') {
 				byContinent(result);
 			} else if (type === 'country') {
+				console.log(result);
 				byCountry(result);
 			}
 			

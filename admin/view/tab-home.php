@@ -25,16 +25,29 @@
                                 <label><strong>Zone IO Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value="[zone-covid19]" readonly>
                                 <small class="pull-left">Show all details</small><br>
-                                <strong class="pull-left">Attributes Available for Statistic</strong><br>
+                                <strong class="pull-left">Attributes Available to output a specific data.</strong><br>
                                 <ul>
                                     <li>country</li>
                                     <li>continent</li>
+                                    <li>dark</li>
                                 </ul>
-                                <strong class="pull-left">Examples</strong><br>
+                                <strong class="pull-left">Examples Single Output</strong><br>
                                 <ul>
                                     <li>[zone-covid19 country="US"]</li>
                                     <li>[zone-covid19 continent="North America"]</li>
-                                    <li>[zone-covid19 background="#1c1c1c"]</li>
+                                </ul><hr>
+                                <ul>
+                                    <li>[zone-covid19 country="US" dark]</li>
+                                    <li>[zone-covid19 continent="North America" dark]</li>
+                                </ul>
+                                <strong class="pull-left">Examples Multiple Output</strong><br>
+                                <ul>
+                                    <li>[zone-covid19 country="US,Philippines"]</li>
+                                    <li>[zone-covid19 continent="North America, Asia"]</li>
+                                </ul><hr>
+                                <ul>
+                                    <li>[zone-covid19 country="US,Philippines" dark]</li>
+                                    <li>[zone-covid19 continent="North America, Asia" dark]</li>
                                 </ul>
                             </div>
                         </div>
@@ -45,11 +58,12 @@
                                 <small class="pull-left">Shows all cases.</small><br>
                                 <strong class="pull-left">Attributes Available for Table</strong><br>
                                 <ul>
-                                    <li>None</li>
+                                    <li>dark</li>
                                 </ul>
                                 <strong class="pull-left">Examples</strong><br>
                                 <ul>
-                                <li>[zone-covid19-table]</li>
+                                    <li>[zone-covid19-table]</li>
+                                    <li>[zone-covid19-table dark]</li>
                                 </ul>
                             </div>
                         </div>
@@ -61,6 +75,7 @@
     <p class="mt-2"><strong>Credits</strong></p>
     <p>https://github.com/disease-sh/API - <a href="//github.com/disease-sh/API/blob/master/privacy.md">Privacy Policy</a></p>
     <p class="mt-2"><strong>Sources</strong></p>
-    <p><a href="//github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></p>
-    <p><a href="//github.com/nytimes/covid-19-data">New York Times, Worldometers</a></p>
+    <p><a href="https://github.com/CSSEGISandData/COVID-19">Johns Hopkins University</a></p>
+    <p><a href="https://github.com/nytimes/covid-19-data">New York Times</a></p>
+    <p><a href="https://www.worldometers.info/">Worldometers</a></p>
 </div>
