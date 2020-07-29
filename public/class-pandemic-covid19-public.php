@@ -118,13 +118,13 @@ class Pandemic_Covid19_Public {
 
 	public function zoneCovidHead($atts)
 	{
-		$zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
-		$zn_continent = (empty($atts['country']) && $atts['continent'] ? $atts['continent'] : '');
-		$zn_country = (empty($atts['continent']) && $atts['country'] ? $atts['country'] : '');
+		// $zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
+		// $zn_continent = (empty($atts['country']) && $atts['continent'] ? $atts['continent'] : '');
+		// $zn_country = (empty($atts['continent']) && $atts['country'] ? $atts['country'] : '');
 		echo '<script>
-		var zn_global = "'.$zn_global.'"; 
-		var zn_continent = "'.rawurlencode($zn_continent).'"; 
-		var zn_country = "'.rawurlencode($zn_country).'";
+		var zn_global = "all"; 
+		var zn_continent = "'.rawurlencode($atts['continent']).'"; 
+		var zn_country = "'.rawurlencode($atts['country']).'";
 		var zn_globaltable = "";
 		</script>';
 	}
