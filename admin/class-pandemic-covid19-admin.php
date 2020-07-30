@@ -69,8 +69,10 @@ class Pandemic_Covid19_Admin {
 	public function enqueue_styles() {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pandemic-covid19-admin.css', array(), $this->version, 'all' );
-		/* Bootstrap 4 CSS */
-		wp_enqueue_style('zone-pcovid-bootstrap-css', plugin_dir_url(__FILE__) . 'css/bootstrap/bootstrap.min.css', array(), $this->version);
+		if ($_GET['page'] == $this->plugin_name) {
+			/* Bootstrap 4 CSS */
+			wp_enqueue_style('zone-pcovid-bootstrap-css', plugin_dir_url(__FILE__) . 'css/bootstrap/bootstrap.min.css', array(), $this->version);
+		}
 		wp_enqueue_style('zone-pcovid-datatable-css', plugin_dir_url(__FILE__) . 'css/datatable/jquery.dataTables.css', array(), $this->version);
 	}
 
@@ -82,15 +84,20 @@ class Pandemic_Covid19_Admin {
 	public function enqueue_scripts() {
 
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pandemic-covid19-admin.js', array( 'jquery' ), $this->version, false );
+		wp_enqueue_script( $this->plugin_name.'-ajax', plugin_dir_url( __FILE__ ) . 'js/pandemic-covid19-admin-ajax.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script('jquery');
-		/* Bootstrap 4 JS */
-		wp_enqueue_script('zone-pcovid-bootstrap-js', plugin_dir_url(__FILE__) . 'js/bootstrap/bootstrap.min.js', array('jquery'), $this->version);
+		if ($_GET['page'] == $this->plugin_name) {
+			/* Bootstrap 4 JS */
+			wp_enqueue_script('zone-pcovid-bootstrap-js', plugin_dir_url(__FILE__) . 'js/bootstrap/bootstrap.min.js', array('jquery'), $this->version);
+		}
 		wp_enqueue_script('zone-pcovid-datatable-js', plugin_dir_url(__FILE__) . 'js/datatable/jquery.dataTables.js', array('jquery'), $this->version);
+		wp_localize_script($this->plugin_name.'-ajax', 'pandemicAjax', array('ajax_url' => admin_url('admin-ajax.php'),'ajax_nonce'=>wp_create_nonce('zn-ajax-nonce')));
 	}
 
 	public function deployZone()
 	{
 		add_action('admin_menu', array(&$this, 'zoneOptions'));
+		add_action('wp_dashboard_setup', array(&$this,'zone_dashboard_widgets'));
 	}
 
 	public function zoneOptions()
@@ -107,11 +114,20 @@ class Pandemic_Covid19_Admin {
 		);
 	}
 
+	public function zone_dashboard_widgets() {
+		global $wp_meta_boxes;
+		wp_add_dashboard_widget('custom_help_widget', 'Zone Covid19 Data', array(&$this,'zone_dashboard_data'));
+	}
+
+	/** Plugin Page */
 	public function zoneOptionsPage()
 	{
 		require_once('view/pandemic-covid19-admin-display.php');
 	}
 
-
+	/** Plugin Widget Dashboard */
+	public function zone_dashboard_data() {
+		require_once('view/widget-pandemic-covid19-global.php');
+	}
 
 }
