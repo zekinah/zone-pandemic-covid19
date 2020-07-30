@@ -15,6 +15,7 @@
 <div class="container-fluid">
     <h1 class="zone-title text-center mt-5">Pandemic Covid-19 Data</h1>
     <p><strong>Information:</strong> This plugin displays the recorded global data of all for the total statistics of the Covid-19.</p>
+    <p><strong>Website:</strong> <a href="https://pandemiccovid19.netlify.app/" target="_blank">Pandemic Covid19</a></p>
     <div class="row">
         <div class="col-md-12">
             <div class="zone-home form">
