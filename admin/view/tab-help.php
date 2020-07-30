@@ -23,7 +23,7 @@
     </ul>
     <div class="row">
         <div class="col-md-12">
-            <table class="table table-bordered downloads tablesorter" id="myTable">
+            <table class="table table-bordered downloads tablesorter" id="tbl-countries">
                 <thead>
                     <tr>
                         <th class="head headerSortDown headerSortUp">Country Name</th>

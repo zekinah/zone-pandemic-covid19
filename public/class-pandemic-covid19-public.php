@@ -118,9 +118,6 @@ class Pandemic_Covid19_Public {
 
 	public function zoneCovidHead($atts)
 	{
-		// $zn_global = (empty($atts['country']) && empty($atts['continent']) ? 'all' : '');
-		// $zn_continent = (empty($atts['country']) && $atts['continent'] ? $atts['continent'] : '');
-		// $zn_country = (empty($atts['continent']) && $atts['country'] ? $atts['country'] : '');
 		echo '<script>
 		var zn_global = "all"; 
 		var zn_continent = "'.rawurlencode($atts['continent']).'"; 

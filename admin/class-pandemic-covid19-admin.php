@@ -71,6 +71,7 @@ class Pandemic_Covid19_Admin {
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pandemic-covid19-admin.css', array(), $this->version, 'all' );
 		/* Bootstrap 4 CSS */
 		wp_enqueue_style('zone-pcovid-bootstrap-css', plugin_dir_url(__FILE__) . 'css/bootstrap/bootstrap.min.css', array(), $this->version);
+		wp_enqueue_style('zone-pcovid-datatable-css', plugin_dir_url(__FILE__) . 'css/datatable/jquery.dataTables.css', array(), $this->version);
 	}
 
 	/**
@@ -84,6 +85,7 @@ class Pandemic_Covid19_Admin {
 		wp_enqueue_script('jquery');
 		/* Bootstrap 4 JS */
 		wp_enqueue_script('zone-pcovid-bootstrap-js', plugin_dir_url(__FILE__) . 'js/bootstrap/bootstrap.min.js', array('jquery'), $this->version);
+		wp_enqueue_script('zone-pcovid-datatable-js', plugin_dir_url(__FILE__) . 'js/datatable/jquery.dataTables.js', array('jquery'), $this->version);
 	}
 
 	public function deployZone()
