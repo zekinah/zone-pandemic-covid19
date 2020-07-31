@@ -103,7 +103,7 @@
 						columns: [
 							{
 								"render": function (data, type, json, meta) {
-									return '<img src="'+json.countryInfo.flag+'" alt="'+json.countryInfo.iso2+'">';
+									return '<img src="'+json.countryInfo.flag+'" alt="'+json.countryInfo.iso2+'" width="50px">';
 								}
 							},
 							{ 

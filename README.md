@@ -16,6 +16,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 This plugin provides shortcode that displays the live recorded data of the covid19 in the whole world.
 
+## Description
+
+This plugin provides data of how many patient(s) are active, confirmed, dead or recovered, in a world, and the continent or country assigned.
+
 ## Features
 
 * Updates data every 10 minutes. Which means it is live status of current sitution in the world.
@@ -23,6 +27,17 @@ This plugin provides shortcode that displays the live recorded data of the covid
 * Shortcode for every continent and shows the data of covid 19 from that continent.
 * Shortcode that provides table for that shows the list of all countries and its data of covid19.
 * Shortcode for the overall total global data that is recorded.
+
+## Shortcode
+
+* `[zone-covid19]` - Showing the global data.
+* `[zone-covid19 country="US"]` - Showing the data of specific country.
+* `[zone-covid19 continent="North America"]` - Showing the data of specific continent.
+* `[zone-covid19 country="US,Philippines"]` - Showing the data of multiple countries.
+* `[zone-covid19 continent="North America, Asia"]` - Showing the data of multiple continents.
+* `[zone-covid19-table]` - Showing the list of all countries and its data in a table form.
+
+Additional: Add `dark="true"` if you want a dark mode.
 
 ## Installation
 

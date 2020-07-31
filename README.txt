@@ -1,61 +1,69 @@
-=== Plugin Name ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: zekinahlecaros.com
-Tags: comments, spam
+=== Zone Pandemic Covid19 ===
+Contributors: zekinah
+Donate link: https://www.buymeacoffee.com/zekinah
+Tags: covid19, covid-19, corona, status, report 
 Requires at least: 3.0.1
-Tested up to: 3.4
+Tested up to: 5.4
+Requires PHP: 5.6 or higher
+Tested up to: 5.4
 Stable tag: 4.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+This plugin provides shortcode that displays the live recorded data of the covid19 in the whole world.
 
 == Description ==
 
-This is the long description.  No limit, and you can use Markdown (as well as in the following sections).
+This plugin provides data of how many patient(s) are active, confirmed, dead or recovered, in a world, and the continent or country assigned.
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+== API used == 
 
-A few notes about the sections above:
+* [Disease SH](https://github.com/disease-sh/API) - [Privacy](https://github.com/NovelCOVID/API/blob/master/privacy.md)
+* [Johns Hopkins University](https://github.com/CSSEGISandData/COVID-19)
+* [Worldometers](https://www.worldometers.info/coronavirus/)
 
-*   "Contributors" is a comma separated list of wp.org/wp-plugins.org usernames
-*   "Tags" is a comma separated list of tags that apply to the plugin
-*   "Requires at least" is the lowest version that the plugin will work on
-*   "Tested up to" is the highest version that you've *successfully used to test the plugin*. Note that it might work on
-higher versions... this is just the highest one you've verified.
-*   Stable tag should indicate the Subversion "tag" of the latest stable version, or "trunk," if you use `/trunk/` for
-stable.
+== Features == 
 
-    Note that the `readme.txt` of the stable tag is the one that is considered the defining one for the plugin, so
-if the `/trunk/readme.txt` file says that the stable tag is `4.3`, then it is `/tags/4.3/readme.txt` that'll be used
-for displaying information about the plugin.  In this situation, the only thing considered from the trunk `readme.txt`
-is the stable tag pointer.  Thus, if you develop in trunk, you can update the trunk `readme.txt` to reflect changes in
-your in-development version, without having that information incorrectly disclosed about the current stable version
-that lacks those changes -- as long as the trunk's `readme.txt` points to the correct stable tag.
+* Updates data every 10 minutes (Not the plugin itself). Which means it is live status of current sitution in the world.
+* Shortcode for every country and shows the data of covid 19 from that country.
+* Shortcode for every continent and shows the data of covid 19 from that continent.
+* Shortcode that provides table for that shows the list of all countries and its data of covid19.
+* Shortcode for the overall total global data that is recorded.
+* Dashboard Widget on the admin area that shows the Global Status of the covid19.
 
-    If no stable tag is provided, it is assumed that trunk is stable, but you should specify "trunk" if that's where
-you put the stable version, in order to eliminate any doubt.
+== Shortcodes == 
+
+* `[zone-covid19]` - Showing the global data.
+* `[zone-covid19 country="US"]` - Showing the data of specific country.
+* `[zone-covid19 continent="North America"]` - Showing the data of specific continent.
+* `[zone-covid19 country="US,Philippines"]` - Showing the data of multiple countries.
+* `[zone-covid19 continent="North America, Asia"]` - Showing the data of multiple continents.
+* `[zone-covid19-table]` - Showing the list of all countries and its data in a table form.
+
+Additional: Add `dark="true"` if you want a dark mode.
+
+Support
+Feel free to help with development or issue reporting to
+
+[Github Repository](https://github.com/zekinah/zone-pandemic-covid19)
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+The plugin is simple to install:
 
-e.g.
-
-1. Upload `pandemic-covid19.php` to the `/wp-content/plugins/` directory
-1. Activate the plugin through the 'Plugins' menu in WordPress
-1. Place `<?php do_action('plugin_name_hook'); ?>` in your templates
+1. Upload `zone-pandemic-covid19` to the `/wp-content/plugins/` directory
+2. Activate the plugin through the \'Plugins\' menu in WordPress
+3. Get the list of shortcode from the Zone Covid19 on sidebar.
 
 == Frequently Asked Questions ==
 
-= A question that someone might have =
+= What are the scope of API ? =
 
-An answer to that question.
+The API provides the world global data of Covid19 and updates every 10 minutes.
 
-= What about foo bar? =
+= The plugin didn't work when Im in Russia? =
 
-Answer to foo bar dilemma.
+The API that we are using on this plugin was blocked in Russian Government Regulator since April 10, 2020.
 
 == Screenshots ==
 
@@ -68,47 +76,4 @@ directory take precedence. For example, `/assets/screenshot-1.png` would win ove
 == Changelog ==
 
 = 1.0 =
-* A change since the previous version.
-* Another change.
-
-= 0.5 =
-* List versions from most recent at top to oldest at bottom.
-
-== Upgrade Notice ==
-
-= 1.0 =
-Upgrade notices describe the reason a user should upgrade.  No more than 300 characters.
-
-= 0.5 =
-This version fixes a security related bug.  Upgrade immediately.
-
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above.  This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation."  Arbitrary sections will be shown below the built-in sections outlined above.
-
-== A brief Markdown Example ==
-
-Ordered list:
-
-1. Some feature
-1. Another feature
-1. Something else about the plugin
-
-Unordered list:
-
-* something
-* something else
-* third thing
-
-Here's a link to [WordPress](http://wordpress.org/ "Your favorite software") and one to [Markdown's Syntax Documentation][markdown syntax].
-Titles are optional, naturally.
-
-[markdown syntax]: http://daringfireball.net/projects/markdown/syntax
-            "Markdown is what the parser uses to process much of the readme file"
-
-Markdown uses email style notation for blockquotes and I've been told:
-> Asterisks for *emphasis*. Double it up  for **strong**.
-
-`<?php code(); // goes in backticks ?>`
+* Intial Release
