@@ -118,12 +118,17 @@ class Pandemic_Covid19_Public {
 
 	public function zoneCovidHead($atts)
 	{
+		if($atts) {
+			$continent = rawurlencode($atts['continent']);
+			$country = rawurlencode($atts['country']);
+		}
 		echo '<script>
-		var zn_global = "all"; 
-		var zn_continent = "'.rawurlencode($atts['continent']).'"; 
-		var zn_country = "'.rawurlencode($atts['country']).'";
-		var zn_globaltable = "";
-		</script>';
+			var zn_global = "all"; 
+			var zn_continent = "'.$continent.'"; 
+			var zn_country = "'.$country.'";
+			var zn_globaltable  = "";
+			</script>';
+		
 	}
 
 	public function zoneCovidTableContent( $atts )

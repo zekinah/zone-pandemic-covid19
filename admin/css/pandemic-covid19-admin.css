@@ -143,3 +143,56 @@ table#tbl-reviewlinks td.url-link {
 .zn-covid19__content {
     display: none;
 }
+.zn-global-cases.title {
+  font-size: 40px;
+  font-weight: 800;
+  margin: auto;
+  text-align: center;
+}
+.zn-global-name.title {
+  font-size: 20px;
+  text-align: center;
+  margin-top: 0;
+}
+.global-info {
+  margin: 1em 0;
+}
+.global-info p {
+  padding: 0;
+  line-height: 1.5;
+}
+.column {
+  display: flex;
+  justify-content: space-between;
+}
+.global-stats {
+  display: flex;
+  width: 100%;
+  margin-bottom: 1em;
+}
+.global-stats span.emoji {
+  font-size: 30px;
+}
+.card.by-global {
+  width: 100%;
+  margin: auto;
+}
+.global-stats .mr-1 {
+  margin-right: 1em;
+}
+
+.global-stats__values span.title {
+  font-size: 18px;
+  line-height: 1.5;
+}
+.global-stats__values p#zn-global-active,
+.global-stats__values p#zn-global-recovered,
+.global-stats__values p#zn-global-critical,
+.global-stats__values p#zn-global-deaths {
+  margin: 0;
+  font-size: 20px;
+}
+.global-stats__values p.subtitle {
+  padding: 0;
+  color: #c80000;
+}
