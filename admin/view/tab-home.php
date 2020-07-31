@@ -38,8 +38,8 @@
                                     <li>[zone-covid19 continent="North America"]</li>
                                 </ul><hr>
                                 <ul>
-                                    <li>[zone-covid19 country="US" dark]</li>
-                                    <li>[zone-covid19 continent="North America" dark]</li>
+                                    <li>[zone-covid19 country="US" dark="true"]</li>
+                                    <li>[zone-covid19 continent="North America" dark="true"]</li>
                                 </ul>
                                 <strong class="pull-left">Examples Multiple Output</strong><br>
                                 <ul>
@@ -47,8 +47,8 @@
                                     <li>[zone-covid19 continent="North America, Asia"]</li>
                                 </ul><hr>
                                 <ul>
-                                    <li>[zone-covid19 country="US,Philippines" dark]</li>
-                                    <li>[zone-covid19 continent="North America, Asia" dark]</li>
+                                    <li>[zone-covid19 country="US,Philippines" dark="true"]</li>
+                                    <li>[zone-covid19 continent="North America, Asia" dark="true"]</li>
                                 </ul>
                             </div>
                         </div>
@@ -64,7 +64,7 @@
                                 <strong class="pull-left">Examples</strong><br>
                                 <ul>
                                     <li>[zone-covid19-table]</li>
-                                    <li>[zone-covid19-table dark]</li>
+                                    <li>[zone-covid19-table dark="true"]</li>
                                 </ul>
                             </div>
                         </div>

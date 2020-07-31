@@ -11,6 +11,10 @@
  * @package    Pandemic_Covid19
  * @subpackage Pandemic_Covid19/public/partials
  */
+$dark = '';
+if($atts['dark']){
+    $dark = 'dark';
+}
 ?>
 <section id="zn-covid19-table" class="section">
     <div class="zn-loading"><span class="covid19">🦠</span></div>
@@ -18,7 +22,7 @@
         <div class="has-text-centered mb-3">
             <p class="title is-4">🌎 <?= __('World') ?></p>
         </div>
-        <table id="tbl-covid19data" class="display nowrap" style="width:100%">
+        <table id="tbl-covid19data" class="display nowrap <?=$dark?>" style="width:100%">
             <thead>
                 <tr>
                     <th></th>

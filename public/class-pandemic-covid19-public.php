@@ -93,6 +93,7 @@ class Pandemic_Covid19_Public {
 			array(
 				'country' => '',
 				'continent' => '',
+				'dark' => '',
 			),
 			$atts,
 			'zone-covid19'
@@ -136,7 +137,7 @@ class Pandemic_Covid19_Public {
 		$tab = '';
 		$atts = shortcode_atts(
 			array(
-				'background' => '',
+				'dark' => '',
 			),
 			$atts,
 			'zone-covid19-table'

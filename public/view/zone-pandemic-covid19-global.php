@@ -12,8 +12,12 @@
  * @subpackage Pandemic_Covid19/public/partials
  * 
  */
+$dark = '';
+if($atts['dark']){
+    $dark = 'dark';
+}
 ?>
-<section id="zn-covid19" class="section">
+<section id="zn-covid19" class="section global <?=$dark?>">
     <div class="zn-loading"><span class="covid19">🦠</span></div>
     <div class="zn-covid19__content">
         <div class="has-text-centered mb-2">

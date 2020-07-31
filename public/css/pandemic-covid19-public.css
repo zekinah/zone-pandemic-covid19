@@ -107,6 +107,28 @@ h5, h6 {
     transform: rotate(360deg);
   }
 }
+.global .zn-covid19__content {
+    padding: 10px;
+}
 .zn-covid19__content {
     display: none;
+}
+/** Dark Mode */
+.global.dark .zn-covid19__content {
+    background: #23282d;
+}
+.global.dark .zn-covid19__content .title {
+    color: #ffffff;
+}
+.global.dark .zn-covid19__content .subtitle {
+    color: #cbc8c8;
+}
+#zn-covid19.dark .card {
+    background: #23282d;
+}
+#zn-covid19.dark .card .title {
+    color: #ffffff;
+}
+#zn-covid19.dark .card .subtitle {
+    color: #cbc8c8;
 }
