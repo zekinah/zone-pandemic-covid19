@@ -113,6 +113,12 @@ h5, h6 {
 .zn-covid19__content {
     display: none;
 }
+.global-stats__values p.subtitle,
+.continent-stats__values p.subtitle,
+.country-stats__values p.subtitle {
+    padding: 0;
+    color: #c80000;
+}
 /** Dark Mode */
 .global.dark .zn-covid19__content {
     background: #23282d;
