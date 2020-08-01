@@ -7,7 +7,7 @@
 ![GitHub issues](https://img.shields.io/github/issues/zekinah/zone-pandemic-covid19)
 ![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/stars/zone-pandemic-covid19)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dm/zone-pandemic-covid19)
-![GitHub](https://img.shields.io/github/license/zekinahzone-pandemic-covid19)
+![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19)
 
 Tags: covid19, covid-19, corona, status, report 
 Requires at least: 3.0.1
