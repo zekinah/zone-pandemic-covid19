@@ -1,16 +1,19 @@
+<img src="https://ps.w.org/zone-pandemic-covid-19/assets/banner-772x250.png" alt="Banner" width="100%">
+
 # Zone Pandemic Covid19 for Wordpress
 
-![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/zone-redirect)
-![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/zone-redirect)
-![GitHub issues](https://img.shields.io/github/issues/zekinah/zone-redirect)
-![GitHub](https://img.shields.io/github/license/zekinah/zone-redirect)
+![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/zone-pandemic-covid19)
+![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/zone-pandemic-covid19)
+![GitHub issues](https://img.shields.io/github/issues/zekinah/zone-pandemic-covid19)
+![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/stars/zone-pandemic-covid19)
+![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dm/zone-pandemic-covid19)
+![GitHub](https://img.shields.io/github/license/zekinahzone-pandemic-covid19)
 
 Tags: covid19, covid-19, corona, status, report 
 Requires at least: 3.0.1
-Tested up to: 5.4
+Tested up to: 5.5
 Requires PHP: 5.6 or higher
-Tested up to: 5.4
-Stable tag: 4.3
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
