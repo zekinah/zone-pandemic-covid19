@@ -63,8 +63,9 @@ class Pandemic_Covid19_Public {
 	public function enqueue_styles() {
 
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pandemic-covid19-public.css', array(), $this->version, 'all' );
-		wp_enqueue_style( 'zone-pandemic-covid19-bulma', plugin_dir_url( __FILE__ ) . 'css/bulma.min.css', array(), $this->version, 'all' );
+		wp_enqueue_style('zone-pandemic-covid19-bulma', plugin_dir_url( __FILE__ ) . 'css/bulma.min.css', array(), $this->version, 'all' );
 		wp_enqueue_style('zone-pandemic-covid19-datatable-css', plugin_dir_url(__FILE__) . 'css/datatable/jquery.dataTables.css', array(), $this->version);
+		wp_enqueue_style('zone-pandemic-covid19-leaflet-css', plugin_dir_url(__FILE__) . 'css/leaflet/leaflet.css', array(), $this->version);
 	}
 
 	/**
@@ -75,8 +76,9 @@ class Pandemic_Covid19_Public {
 	public function enqueue_scripts() {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pandemic-covid19-public.js', array( 'jquery' ), $this->version, false );
-		wp_enqueue_script('zone-pandemic-covid19-ajax', plugin_dir_url(__FILE__)  . 'js/pandemic-covid19-ajax.js', array('jquery', $this->plugin_name), $this->version, false);
 		wp_enqueue_script('zone-pandemic-covid19-datatable-js', plugin_dir_url(__FILE__) . 'js/datatable/jquery.dataTables.js', array('jquery'), $this->version);
+		wp_enqueue_script('zone-pandemic-covid19-leaflet-js', plugin_dir_url(__FILE__) . 'js/leaflet/leaflet.js', array('jquery'), $this->version);
+		wp_enqueue_script('zone-pandemic-covid19-ajax', plugin_dir_url(__FILE__)  . 'js/pandemic-covid19-ajax.js', array('jquery', $this->plugin_name), $this->version, false);
 		wp_localize_script('zone-pandemic-covid19-ajax', 'pandemicAjax', array('ajax_url' => admin_url('admin-ajax.php'),'ajax_nonce'=>wp_create_nonce('zn-ajax-nonce')));
 	}
 
