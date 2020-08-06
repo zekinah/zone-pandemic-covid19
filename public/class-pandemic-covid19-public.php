@@ -65,7 +65,6 @@ class Pandemic_Covid19_Public {
 		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/pandemic-covid19-public.css', array(), $this->version, 'all' );
 		wp_enqueue_style('zone-pandemic-covid19-bulma', plugin_dir_url( __FILE__ ) . 'css/bulma.min.css', array(), $this->version, 'all' );
 		wp_enqueue_style('zone-pandemic-covid19-datatable-css', plugin_dir_url(__FILE__) . 'css/datatable/jquery.dataTables.css', array(), $this->version);
-		// wp_enqueue_style('zone-pandemic-covid19-leaflet-css', plugin_dir_url(__FILE__) . 'css/leaflet/leaflet.css', array(), $this->version);
 	}
 
 	/**
@@ -77,13 +76,14 @@ class Pandemic_Covid19_Public {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pandemic-covid19-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script('zone-pandemic-covid19-datatable-js', plugin_dir_url(__FILE__) . 'js/datatable/jquery.dataTables.js', array('jquery'), $this->version);
-		wp_enqueue_script('zone-pandemic-covid19-core', plugin_dir_url(__FILE__)  . 'js/amchart/core.js', array(), $this->version);
-		wp_enqueue_script('zone-pandemic-covid19-chart', plugin_dir_url(__FILE__)  . 'js/amchart/chart.js', array(), $this->version);
+		// wp_enqueue_script('zone-pandemic-covid19-core', plugin_dir_url(__FILE__)  . 'js/amchart/core.js', array(), $this->version);
+		// wp_enqueue_script('zone-pandemic-covid19-chart', plugin_dir_url(__FILE__)  . 'js/amchart/chart.js', array(), $this->version);
 		// wp_enqueue_script('zone-pandemic-covid19-animated', plugin_dir_url(__FILE__)  . 'js/amchart/animated.js', array(), $this->version);
-		// wp_enqueue_script('zone-pandemic-covid19-core', 'https://cdn.amcharts.com/lib/4/core.js', array(), $this->version);
+		wp_enqueue_script('zone-pandemic-covid19-core', 'https://cdn.amcharts.com/lib/4/core.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-chart', 'https://cdn.amcharts.com/lib/4/charts.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-animated', 'https://cdn.amcharts.com/lib/4/themes/animated.js', array(), $this->version);
-		// wp_enqueue_script('zone-pandemic-covid19-leaflet-js', plugin_dir_url(__FILE__) . 'js/leaflet/leaflet.js', array('jquery'), $this->version);
+		wp_enqueue_script('zone-pandemic-covid19-map', 'https://cdn.amcharts.com/lib/4/maps.js', array(), $this->version);
+		wp_enqueue_script('zone-pandemic-covid19-world', 'https://cdn.amcharts.com/lib/4/geodata/worldLow.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-ajax', plugin_dir_url(__FILE__)  . 'js/pandemic-covid19-ajax.js', array('jquery', $this->plugin_name), $this->version, false);
 		wp_localize_script('zone-pandemic-covid19-ajax', 'pandemicAjax', array('ajax_url' => admin_url('admin-ajax.php'),'ajax_nonce'=>wp_create_nonce('zn-ajax-nonce')));
 	}
@@ -93,6 +93,7 @@ class Pandemic_Covid19_Public {
 		add_shortcode( 'zone-covid19', array(&$this, 'zoneCovidContent') );
 		add_shortcode( 'zone-covid19-table', array(&$this, 'zoneCovidTableContent') );
 		add_shortcode( 'zone-covid19-history-graph', array(&$this, 'zoneCovidGraphContent') );
+		add_shortcode( 'zone-covid19-map', array(&$this, 'zoneCovidMapContent') );
 		add_action('wp_head',  array(&$this,'zoneCovidHead'));
 	}
 
@@ -167,6 +168,16 @@ class Pandemic_Covid19_Public {
 		</script>';
 		ob_start();
 			require_once('view/zone-pandemic-covid19-graph.php');
+		return ob_get_clean();
+	}
+
+	public function zoneCovidMapContent($atts)
+	{
+		echo '<script>
+		var zn_globalmap = "all";
+		</script>';
+		ob_start();
+			require_once('view/zone-pandemic-covid19-map.php');
 		return ob_get_clean();
 	}
 

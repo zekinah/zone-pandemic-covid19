@@ -26,6 +26,12 @@
 			let api_url = "https://disease.sh/v3/covid-19/historical/" + zn_globalgraph + "?lastdays=all";
 			fetchApiDataGraph(api_url);
 		}
+		/** GMapraph */
+		if (zn_globalmap !== null || zn_globalmap !== '') {
+			let api_url = "https://disease.sh/v3/covid-19/countries";
+			fetchApiDataMap(api_url);
+		}
+
 	});
 
 
@@ -238,6 +244,21 @@
 					chart.logo.disabled = true;
 					$(".zn-loading").fadeOut();
 					$(".zn-covid19__content").fadeIn();
+				}
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	/** Generate Map from API  */
+	async function fetchApiDataMap(api_url) {
+		try {
+			await $.ajax({
+				url: api_url,
+				dataType: 'json',	
+				success: function(json){
+					console.log(json);
 				}
 			});
 		} catch (error) {
