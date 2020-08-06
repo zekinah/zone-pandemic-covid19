@@ -262,8 +262,12 @@
 					covid19_data_map = json.map(data=>{
 						var id = data.countryInfo.iso2;
 						var value = Number(data.cases).toLocaleString();
+						var active = Number(data.active).toLocaleString();
+						var critical = Number(data.critical).toLocaleString();
+						var recovered = Number(data.recovered).toLocaleString();
+						var deaths = Number(data.deaths).toLocaleString();
 						return {
-							id, value
+							id, value, active,  critical, recovered, deaths
 						};
 					});
 					am4core.useTheme(am4themes_animated);
@@ -276,7 +280,7 @@
 
 					var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
 					var polygonTemplate = polygonSeries.mapPolygons.template;
-						polygonTemplate.tooltipText = "{name}: {value}";
+						polygonTemplate.tooltipText = "[bold]{name}[/] \n 🤒 Cases: {value} \n 🤧 Active: {active} \n 😷 Critical: {critical} \n 😄 Recovered: {recovered} \n 💀 Deaths: {deaths} \n ";
 						polygonSeries.heatRules.push({
 						property: "fill",
 						target: polygonSeries.mapPolygons.template,
@@ -284,13 +288,14 @@
 						max: am4core.color("#e30000")
 					});
 					polygonSeries.useGeodata = true;
+
 					// add heat legend
 					var heatLegend = chart.chartContainer.createChild(am4maps.HeatLegend);
 					heatLegend.valign = "bottom";
 					heatLegend.align = "left";
 					heatLegend.width = am4core.percent(100);
 					heatLegend.series = polygonSeries;
-					heatLegend.orientation = "horizontal";
+					heatLegend.orientation = "vertical";
 					heatLegend.padding(20, 20, 20, 20);
 					heatLegend.valueAxis.renderer.labels.template.fontSize = 10;
 					heatLegend.valueAxis.renderer.minGridDistance = 40;
