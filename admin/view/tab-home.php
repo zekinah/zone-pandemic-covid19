@@ -63,13 +63,17 @@
                                 </ul>
                                 <strong class="pull-left">Examples</strong><br>
                                 <ul>
-                                    <li>[zone-covid19-table]</li>
                                     <li>[zone-covid19-table dark="true"]</li>
                                 </ul>
                             </div><hr>
                             <div class="form-group">
                                 <label><strong>Zone Covid-19 History Graph Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value='[zone-covid19-history-graph]' readonly>
+                                <small class="pull-left">Shows all cases.</small><br>
+                            </div><hr>
+                            <div class="form-group">
+                                <label><strong>Zone Covid-19 World Mao Shortcode</strong></label>
+                                <input class="form-control txt-shortcode" type="text" value='[zone-covid19-map]' readonly>
                                 <small class="pull-left">Shows all cases.</small><br>
                             </div>
                         </div>

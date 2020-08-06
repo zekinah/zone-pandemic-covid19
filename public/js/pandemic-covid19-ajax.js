@@ -258,7 +258,72 @@
 				url: api_url,
 				dataType: 'json',	
 				success: function(json){
-					console.log(json);
+					var covid19_data_map = [];
+					covid19_data_map = json.map(data=>{
+						var id = data.countryInfo.iso2;
+						var value = Number(data.cases).toLocaleString();
+						return {
+							id, value
+						};
+					});
+					am4core.useTheme(am4themes_animated);
+
+					var chart = am4core.create("zn-covid19__map", am4maps.MapChart);
+					chart.hiddenState.properties.opacity = 0; // this creates initial fade-in
+
+					chart.geodata = am4geodata_worldLow;
+					chart.projection = new am4maps.projections.Miller();
+
+					var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
+					var polygonTemplate = polygonSeries.mapPolygons.template;
+						polygonTemplate.tooltipText = "{name}: {value}";
+						polygonSeries.heatRules.push({
+						property: "fill",
+						target: polygonSeries.mapPolygons.template,
+						min: am4core.color("#ffa4a4"),
+						max: am4core.color("#e30000")
+					});
+					polygonSeries.useGeodata = true;
+					// add heat legend
+					var heatLegend = chart.chartContainer.createChild(am4maps.HeatLegend);
+					heatLegend.valign = "bottom";
+					heatLegend.align = "left";
+					heatLegend.width = am4core.percent(100);
+					heatLegend.series = polygonSeries;
+					heatLegend.orientation = "horizontal";
+					heatLegend.padding(20, 20, 20, 20);
+					heatLegend.valueAxis.renderer.labels.template.fontSize = 10;
+					heatLegend.valueAxis.renderer.minGridDistance = 40;
+
+					polygonSeries.mapPolygons.template.events.on("over", event => {
+						handleHover(event.target);
+					});
+
+					polygonSeries.mapPolygons.template.events.on("hit", event => {
+						handleHover(event.target);
+					});
+
+					function handleHover(mapPolygon) {
+						if (!isNaN(mapPolygon.dataItem.value)) {
+							heatLegend.valueAxis.showTooltipAt(mapPolygon.dataItem.value);
+						} else {
+							heatLegend.valueAxis.hideTooltip();
+						}
+					}
+					polygonSeries.mapPolygons.template.strokeOpacity = 0.4;
+					polygonSeries.mapPolygons.template.events.on("out", event => {
+					heatLegend.valueAxis.hideTooltip();
+					});
+
+					chart.zoomControl = new am4maps.ZoomControl();
+					chart.zoomControl.valign = "top";
+
+					polygonSeries.data = covid19_data_map;
+					// excludes Antarctica
+					polygonSeries.exclude = ["AQ"];
+					chart.logo.disabled = true;
+					$(".zn-loading").fadeOut();
+					$(".zn-covid19__content").fadeIn();
 				}
 			});
 		} catch (error) {
