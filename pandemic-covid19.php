@@ -16,7 +16,7 @@
  * Plugin Name:       Zone Pandemic Covid-19
  * Plugin URI:        https://github.com/zekinah/wp-pandemic-covid19
  * Description:       This is a short description of what the plugin does. It's displayed in the WordPress admin area.
- * Version:           1.0.0
+ * Version:           1.0.1
  * Author:            Zekinah Lecaros
  * Author URI:        zekinahlecaros.com
  * License:           GPL-2.0+
