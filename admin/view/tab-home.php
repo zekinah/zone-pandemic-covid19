@@ -23,7 +23,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label><strong>Zone IO Shortcode</strong></label>
+                                <label><strong>Zone Covid-19 Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value="[zone-covid19]" readonly>
                                 <small class="pull-left">Show all details</small><br>
                                 <strong class="pull-left">Attributes Available to output a specific data.</strong><br>
@@ -54,7 +54,7 @@
                         </div>
                         <div class="col-md-6">
                             <div class="form-group">
-                                <label><strong>Zone IO using Category ID Shortcode</strong></label>
+                                <label><strong>Zone Covid-19 Table Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value='[zone-covid19-table]' readonly>
                                 <small class="pull-left">Shows all cases.</small><br>
                                 <strong class="pull-left">Attributes Available for Table</strong><br>
@@ -66,6 +66,11 @@
                                     <li>[zone-covid19-table]</li>
                                     <li>[zone-covid19-table dark="true"]</li>
                                 </ul>
+                            </div><hr>
+                            <div class="form-group">
+                                <label><strong>Zone Covid-19 History Graph Shortcode</strong></label>
+                                <input class="form-control txt-shortcode" type="text" value='[zone-covid19-history-graph]' readonly>
+                                <small class="pull-left">Shows all cases.</small><br>
                             </div>
                         </div>
                     </div>

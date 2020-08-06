@@ -21,6 +21,11 @@
 			let api_url = "https://disease.sh/v3/covid-19/countries";
 			fetchApiDataTable(api_url);
 		}
+		/** Graph */
+		if (zn_globalgraph !== null || zn_globalgraph !== '') {
+			let api_url = "https://disease.sh/v3/covid-19/historical/" + zn_globalgraph + "?lastdays=all";
+			fetchApiDataGraph(api_url);
+		}
 	});
 
 
@@ -92,43 +97,145 @@
 						lengthMenu: [20, 50, 100, 200],
 						data: json,
 						columns: [
-							{
+							{ // Column Flag
 								"render": function (data, type, json, meta) {
 									return '<img src="'+json.countryInfo.flag+'" alt="'+json.countryInfo.iso2+'" width="50px">';
 								}
 							},
-							{ 
+							{ // Column Country
 								"render": function (data, type, json, meta) {
 									return '<strong>'+json.country+'</strong>';
 								}
 							},
-							{ 
+							{ // Column Active
 								"render": function (data, type, json, meta) {
 									return Number(json.active).toLocaleString();
 								}
 							},
-							{ 
+							{ // Column Cases
 								"render": function (data, type, json, meta) {
 									return Number(json.cases).toLocaleString();
 								}
 							},
-							{ 
+							{ // Column Tests
 								"render": function (data, type, json, meta) {
 									return Number(json.tests).toLocaleString();
 								}
 							},
-							{ 
+							{ // Column Recovered
 								"render": function (data, type, json, meta) {
 									return Number(json.recovered).toLocaleString();
 								}
 							},
-							{ 
+							{ // Column Deaths
 								"render": function (data, type, json, meta) {
 									return Number(json.deaths).toLocaleString();
 								}
 							},
 						]
 					});
+					$(".zn-loading").fadeOut();
+					$(".zn-covid19__content").fadeIn();
+				}
+			});
+		} catch (error) {
+			console.error(error);
+		}
+	}
+
+	/** Generate Graph from API  */
+	async function fetchApiDataGraph(api_url) {
+		try {
+			await $.ajax({
+				url: api_url,
+				dataType: 'json',	
+				success: function(json){
+					var covid19_data = [];
+					var temp_date = [];
+					var temp_value = [];
+					var temp_date = Object.getOwnPropertyNames(json.cases);
+					var temp_cases = Object.values(json.cases);
+					var temp_deaths = Object.values(json.deaths);
+					var temp_recovered = Object.values(json.recovered);
+					for (var z = 0; z < temp_date.length; z++) {
+						covid19_data.push({
+						  date: temp_date[z],
+						  cases: Number(temp_cases[z]).toLocaleString(),
+						  deaths: Number(temp_deaths[z]).toLocaleString(),
+						  recovered: Number(temp_recovered[z]).toLocaleString(),
+						});
+					}
+					am4core.useTheme(am4themes_animated);
+					// Create chart
+					var chart = am4core.createFromConfig({
+						// Set settings and data
+						"paddingRight": 20,
+						"data": covid19_data,
+						// Create X axes
+						"xAxes": [{
+						"type": "DateAxis",
+						"renderer": {
+							"grid": {
+							"location": 0
+							}
+						}
+						}],
+						// Create Y axes
+						"yAxes": [{
+						"type": "ValueAxis",
+						"tooltip": {
+							"disabled": true
+						},
+						"renderer": {
+							"minWidth": 35
+						}
+						}],
+						// Create series
+						"series": [
+							{
+								"id": "s1",
+								"name": "🤧 Cases",
+								"type": "LineSeries",
+								"dataFields": {
+									"dateX": "date",
+									"valueY": "cases"
+								},
+								"tooltipText": "{name}: {valueY.value}"
+							},
+							{
+								"id": "s2",
+								"name": "💀 Deaths",
+								"type": "LineSeries",
+								"dataFields": {
+									"dateX": "date",
+									"valueY": "deaths"
+								},
+								"tooltipText": "{name}: {valueY.value}"
+							},
+							{
+								"id": "s3",
+								"name": "😄 Recovered",
+								"type": "LineSeries",
+								"dataFields": {
+									"dateX": "date",
+									"valueY": "recovered"
+								},
+								"tooltipText": "{name}: {valueY.value}"
+							}
+						],
+						// Add cursor
+						"cursor": {
+						"type": "XYCursor"
+						},
+						// Add horizontal scrollbar
+						"scrollbarX": {
+						"type": "XYChartScrollbar",
+						"series": ["s1"]
+						}
+					}, "zn-covid19__graph", "XYChart");
+					// Add legend
+					chart.legend = new am4charts.Legend();
+					chart.logo.disabled = true;
 					$(".zn-loading").fadeOut();
 					$(".zn-covid19__content").fadeIn();
 				}
