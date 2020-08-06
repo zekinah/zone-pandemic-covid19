@@ -78,7 +78,14 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 
 6. Result of the Shortcode for the list of all countries and its data in a table form.
 
+7. Result of the Shortcode for the Historical Graph.
+
+8. Result of the Shortcode for the World Heat Map.
+
 == Changelog ==
+= 1.1 =
+* Added Historical Graph ShortCode
+* Added World Heat Map Cases ShortCode
 
 = 1.0 =
 * Intial Release

@@ -54,6 +54,8 @@ Additional: Add `dark="true"` if you want a dark mode.
 
 ## Acknowledgment
 * Thank you for the third party libraries that is used into this plugin.
+    * [Bulma](https://bulma.io/)
+    * [Amchart](https://www.amcharts.com/)
 
 ## Contributor
 
