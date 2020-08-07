@@ -83,7 +83,7 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 8. Result of the Shortcode for the World Heat Map.
 
 == Changelog ==
-= 1.0.1 =
+= 1.0.3 =
 * Added Historical Graph ShortCode
 * Added World Heat Map Cases ShortCode
 

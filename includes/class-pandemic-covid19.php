@@ -75,7 +75,7 @@ class Pandemic_Covid19 {
 		if ( defined( 'PANDEMIC_COVID19_VERSION' ) ) {
 			$this->version = PANDEMIC_COVID19_VERSION;
 		} else {
-			$this->version = '1.0.1';
+			$this->version = '1.0.3';
 		}
 		$this->plugin_name = 'pandemic-covid19';
 
