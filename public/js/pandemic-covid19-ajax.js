@@ -171,6 +171,7 @@
 						  recovered: Number(temp_recovered[z]).toLocaleString(),
 						});
 					}
+
 					am4core.useTheme(am4themes_animated);
 					// Create chart
 					var chart = am4core.createFromConfig({
@@ -237,11 +238,19 @@
 						"scrollbarX": {
 						"type": "XYChartScrollbar",
 						"series": ["s1"]
+						},
+						"colors": {
+							"list": [
+							  "#d21a1a",
+							  "#2196f3",
+							  "#4CAF50",
+							]
 						}
 					}, "zn-covid19__graph", "XYChart");
 					// Add legend
 					chart.legend = new am4charts.Legend();
 					chart.logo.disabled = true;
+
 					$(".zn-loading").fadeOut();
 					$(".zn-covid19__content").fadeIn();
 				}
