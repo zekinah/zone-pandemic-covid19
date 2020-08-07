@@ -4,7 +4,7 @@
 
 ![WordPress Plugin Version](https://img.shields.io/wordpress/plugin/v/zone-pandemic-covid-19)
 ![WordPress Plugin: Tested WP Version](https://img.shields.io/wordpress/plugin/tested/zone-pandemic-covid-19)
-![GitHub issues](https://img.shields.io/github/issues/zekinah/zone-pandemic-covid-19)
+![GitHub issues](https://img.shields.io/github/issues/zekinah/zone-pandemic-covid19)
 ![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/stars/zone-pandemic-covid-19)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dm/zone-pandemic-covid-19)
 ![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19)
@@ -39,6 +39,8 @@ This plugin provides data of how many patient(s) are active, confirmed, dead or 
 * `[zone-covid19 country="US,Philippines"]` - Showing the data of multiple countries.
 * `[zone-covid19 continent="North America, Asia"]` - Showing the data of multiple continents.
 * `[zone-covid19-table]` - Showing the list of all countries and its data in a table form.
+* `[zone-covid19-history-graph]` - Showing the historical graph of covid19 cases.
+* `[zone-covid19-map]` - Showing the world heat map for covid19 cases.
 
 Additional: Add `dark="true"` if you want a dark mode.
 
