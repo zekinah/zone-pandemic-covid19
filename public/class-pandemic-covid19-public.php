@@ -114,14 +114,17 @@ class Pandemic_Covid19_Public {
 		ob_start();
 		// Global Record
 		if (empty($atts['country']) && empty($atts['continent'])){
+			echo '<script> var zn_global = "all"; </script>';
 			require_once('view/zone-pandemic-covid19-global.php');
 		}
 		// By Continent Record
 		if(empty($atts['country']) && $atts['continent']) {
+			echo '<script> var zn_continent = "'.$atts['continent'].'"; </script>';
 			require_once('view/zone-pandemic-covid19-continent.php');
 		}
 		// By Country Record
 		if(empty($atts['continent']) && $atts['country']) {
+			echo '<script> var zn_country = "'.$atts['country'].'"; </script>';
 			require_once('view/zone-pandemic-covid19-country.php');
 		}
 		return ob_get_clean();
@@ -129,14 +132,10 @@ class Pandemic_Covid19_Public {
 
 	public function zoneCovidHead($atts)
 	{
-		if($atts) {
-			$continent = rawurlencode($atts['continent']);
-			$country = rawurlencode($atts['country']);
-		}
 		echo '<script>
-			var zn_global = "all"; 
-			var zn_continent = "'.$continent.'"; 
-			var zn_country = "'.$country.'";
+			var zn_global = ""; 
+			var zn_continent = ""; 
+			var zn_country = "";
 			var zn_globaltable = "";
 			var zn_globalgraph = "";
 			var zn_globalmap = "";
@@ -154,9 +153,7 @@ class Pandemic_Covid19_Public {
 			$atts,
 			'zone-covid19-table'
 		);
-		echo '<script>
-		var zn_globaltable = "all";
-		</script>';
+		echo '<script>var zn_globaltable = "all";</script>';
 		ob_start();
 			require_once('view/zone-pandemic-covid19-table.php');
 		return ob_get_clean();
