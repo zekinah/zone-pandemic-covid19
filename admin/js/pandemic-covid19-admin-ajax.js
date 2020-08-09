@@ -2,7 +2,14 @@
 	'use strict';
 	$ = jQuery.noConflict();
 	$(window).on('load', function () {
-        let api_url = "https://disease.sh/v3/covid-19/all?yesterday=true&allowNull=true";
+		let api_url = "https://disease.sh/v3/covid-19/all?yesterday=true&allowNull=true";
+		if(api_url){
+			$('#zone-api').append('Live');
+			$('#zone-api__status').addClass('zone-up-status');
+		} else {
+			$('#zone-api').append('Down');
+			$('#zone-api__status').addClass('blinking zone-down-status');
+		}
         fetchApiData(api_url, "global");
 	});
 

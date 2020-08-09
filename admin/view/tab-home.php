@@ -9,11 +9,11 @@
  * @since      1.0.0
  *
  * @package    Pandemic_Covid19
- * @subpackage Pandemic_Covid19/admin/partials
+ * @subpackage Pandemic_Covid19/admin/view
  */
 ?>
 <div class="container-fluid">
-    <h1 class="zone-title text-center mt-5">Pandemic Covid-19 Data</h1>
+    <h1 class="zone-title text-center">Pandemic Covid-19 Data</h1>
     <p><strong>Information:</strong> This plugin displays the recorded global data of all for the total statistics of the Covid-19.</p>
     <p><strong>Website:</strong> <a href="https://pandemiccovid19.netlify.app/" target="_blank">Pandemic Covid19</a></p>
     <div class="row">
@@ -57,14 +57,6 @@
                                 <label><strong>Zone Covid-19 Table Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value='[zone-covid19-table]' readonly>
                                 <small class="pull-left">Shows all cases.</small><br>
-                                <strong class="pull-left">Attributes Available for Table</strong><br>
-                                <ul>
-                                    <li>dark</li>
-                                </ul>
-                                <strong class="pull-left">Examples</strong><br>
-                                <ul>
-                                    <li>[zone-covid19-table dark="true"]</li>
-                                </ul>
                             </div><hr>
                             <div class="form-group">
                                 <label><strong>Zone Covid-19 History Graph Shortcode</strong></label>
@@ -72,7 +64,7 @@
                                 <small class="pull-left">Shows all cases.</small><br>
                             </div><hr>
                             <div class="form-group">
-                                <label><strong>Zone Covid-19 World Mao Shortcode</strong></label>
+                                <label><strong>Zone Covid-19 World Map Shortcode</strong></label>
                                 <input class="form-control txt-shortcode" type="text" value='[zone-covid19-map]' readonly>
                                 <small class="pull-left">Shows all cases.</small><br>
                             </div>

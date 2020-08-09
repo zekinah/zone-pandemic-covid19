@@ -120,6 +120,40 @@ table#tbl-reviewlinks td.url-link {
   width: 240px;
   float: left;
 }
+/*Status*/
+#zone-api {
+  display: flex;
+  align-items: center;
+}
+.zone-status {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  border-radius: 10rem;
+  display: block;
+}
+.zone-up-status {
+  background: #15b015;
+}
+.zone-down-status {
+  background: #ff0000;
+}
+.blinking {
+  -webkit-animation: 1s blink ease infinite;
+  -moz-animation: 1s blink ease infinite;
+  -ms-animation: 1s blink ease infinite;
+  -o-animation: 1s blink ease infinite;
+  animation: 1s blink ease infinite;
+  
+}
+@keyframes "blink" {
+  from, to {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
 /*Dashboard Widget CSS*/
 .zn-loading {
     padding: 25px;

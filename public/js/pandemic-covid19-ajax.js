@@ -2,10 +2,9 @@
 	'use strict';
 	$ = jQuery.noConflict();
 	$(window).on('load', function () {
-		console.log('API in Live');
 		/** Cards */
 		if (zn_global !== '') {
-			let api_url = "https://disease.sh/v3/covid-19/all?yesterday=true&allowNull=true";
+			let api_url = "https://disease.sh/v3/covid-19/all?yesterday=true";
 			fetchApiData(api_url, "global");
 		}
 		if (zn_continent !== "") {
@@ -26,12 +25,11 @@
 			let api_url = "https://disease.sh/v3/covid-19/historical/" + zn_globalgraph + "?lastdays=all";
 			fetchApiDataGraph(api_url);
 		}
-		/** Mapraph */
+		/** Map */
 		if (zn_globalmap !== '') {
 			let api_url = "https://disease.sh/v3/covid-19/countries";
 			fetchApiDataMap(api_url);
 		}
-
 	});
 
 

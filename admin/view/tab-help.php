@@ -9,11 +9,11 @@
  * @since      1.0.0
  *
  * @package    Pandemic_Covid19
- * @subpackage Pandemic_Covid19/admin/partials
+ * @subpackage Pandemic_Covid19/admin/partiaviewls
  */
 ?>
 <div class="container-fluid">
-    <h1 class="zone-title text-center mt-5">Help</h1>
+    <h1 class="zone-title text-center">Help</h1>
     <p><strong>Information:</strong> This table provides attributes value for country, possible value can be Country Name, ISO2, ISO3 or Country Code.</p>
     <strong class="pull-left">Examples</strong><br>
     <ul>

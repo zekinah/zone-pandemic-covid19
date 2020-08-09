@@ -17,6 +17,7 @@
         <h1 class="zone-title">Zone Pandemic Covid19 Data</h1>
         <span class="zone-version">v<?= $this->version ?></span>
     </div>
+    <p id="zone-api"><strong>API Status:</strong> <span id="zone-api__status" class="zone-status"></span></p>
     <hr class="wp-header-end">
     <div class="container-fluid">
         <?php
