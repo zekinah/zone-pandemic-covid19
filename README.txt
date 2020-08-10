@@ -1,7 +1,7 @@
 === Zone Pandemic Covid19 ===
 Contributors: zekinah
 Donate link: https://www.buymeacoffee.com/zekinah
-Tags: covid19, covid-19, corona virus, status, report 
+Tags: covid19, covid-19, corona virus, coronavirus, report 
 Requires at least: 3.0.1
 Tested up to: 5.5
 Requires PHP: 5.6 or higher
@@ -60,7 +60,7 @@ The plugin is simple to install:
 
 = What are the scope of API ? =
 
-The API provides the world global data of Covid19 and updates every 10 minutes.
+The API provides the global data of Covid19 cases including active, tested, recovered and deaths. and it all updates every 10 minutes.
 
 = The plugin didn't work when Im in Russia? =
 
@@ -85,6 +85,10 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 8. Result of the Shortcode for the World Heat Map.
 
 == Changelog ==
+= 1.0.4 =
+* Fixed minor bugs for showing Single Country
+* Fixed minor bugs for showing Single continent
+
 = 1.0.3 =
 * Added Historical Graph ShortCode
 * Added World Heat Map Cases ShortCode

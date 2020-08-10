@@ -9,11 +9,11 @@
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dm/zone-pandemic-covid-19)
 ![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19)
 
-Tags: covid19, covid-19, corona, status, report 
+Tags: covid19, covid-19, corona virus, coronavirus, report 
 Requires at least: 3.0.1
 Tested up to: 5.5
 Requires PHP: 5.6 or higher
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

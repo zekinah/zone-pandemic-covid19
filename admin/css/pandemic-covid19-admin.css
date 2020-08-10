@@ -146,8 +146,8 @@ table#tbl-reviewlinks td.url-link {
   animation: 1s blink ease infinite;
   
 }
-@keyframes "blink" {
-  from, to {
+@keyframes blink {
+  0% {
     opacity: 0;
   }
   50% {
