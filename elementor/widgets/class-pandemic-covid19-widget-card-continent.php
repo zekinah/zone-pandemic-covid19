@@ -58,6 +58,24 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 		);
 
 		$this->add_control(
+			'continents',
+			[
+				'label' => __( 'Show Elements', 'plugin-domain' ),
+				'type' => \Elementor\Controls_Manager::SELECT2,
+				'multiple' => true,
+				'options' => [
+					'north-america'  => __( 'North America', 'plugin-domain' ),
+					'south-america' => __( 'South America', 'plugin-domain' ),
+					'asia' => __( 'Asia', 'plugin-domain' ),
+					'europe' => __( 'Europe', 'plugin-domain' ),
+					'africa' => __( 'Africa', 'plugin-domain' ),
+					'australia-oceania' => __( 'Australia/Oceania', 'plugin-domain' ),
+				],
+				'default' => [ 'North America' ],
+			]
+		);
+
+		$this->add_control(
 			'dark_mode',
 			[
 				'label' => __( 'Dark Mode', 'plugin-domain' ),
@@ -74,13 +92,16 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 	}
 
 	protected function render() {
-		$shortcode = $this->get_settings( 'shortcode-form' );
-		$shortcode = do_shortcode('[zone-covid19]');
+		$continents = $this->get_settings( 'continents' );
+		$dark = $this->get_settings( 'dark_mode' );
+		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 
 	public function render_plain_content() {
-		$shortcode = do_shortcode('[zone-covid19]');
+		$continents = $this->get_settings( 'continents' );
+		$dark = $this->get_settings( 'dark_mode' );
+		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 
