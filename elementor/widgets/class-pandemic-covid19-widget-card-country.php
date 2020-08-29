@@ -29,15 +29,15 @@ class Pandemic_Covid19_Widget_Card_Country extends \Elementor\Widget_Base
 {
 
 	public function get_name() {
-		return 'Countries Card';
+		return 'Countries Status Card';
 	}
 
 	public function get_title() {
-		return __( 'Countries Card', 'pandemic-covid19' );
+		return __( 'Countries Status Card', 'pandemic-covid19' );
 	}
 
 	public function get_icon() {
-		return 'eicon-map-pin';
+		return 'fa fa-flag';
 	}
 
 	public function get_categories() {

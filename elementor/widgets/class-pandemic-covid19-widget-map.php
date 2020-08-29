@@ -29,15 +29,15 @@ class Pandemic_Covid19_Widget_Map extends \Elementor\Widget_Base
 {
 
 	public function get_name() {
-		return 'Map';
+		return 'Heat Map';
 	}
 
 	public function get_title() {
-		return __( 'Map', 'pandemic-covid19' );
+		return __( 'Heat Map', 'pandemic-covid19' );
 	}
 
 	public function get_icon() {
-		return 'eicon-google-maps';
+		return 'fa fa-map';
 	}
 
 	public function get_categories() {

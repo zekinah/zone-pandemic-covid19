@@ -37,7 +37,7 @@ class Pandemic_Covid19_Widget_Card_Global extends \Elementor\Widget_Base
 	}
 
 	public function get_icon() {
-		return 'eicon-globe';
+		return 'fa fa-globe';
 	}
 
 	public function get_categories() {

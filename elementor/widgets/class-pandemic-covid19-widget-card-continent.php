@@ -29,15 +29,15 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 {
 
 	public function get_name() {
-		return 'Continent Card';
+		return 'Continents Status Card';
 	}
 
 	public function get_title() {
-		return __( 'Continent Card', 'pandemic-covid19' );
+		return __( 'Continents Status Card', 'pandemic-covid19' );
 	}
 
 	public function get_icon() {
-		return 'eicon-globe';
+		return 'fa fa-globe-americas';
 	}
 
 	public function get_categories() {
@@ -49,7 +49,6 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 	}
 
 	protected function _register_controls() {
-
 		$this->start_controls_section(
 			'section_shortcode',
 			[
@@ -69,7 +68,7 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 					'asia' => __( 'Asia', 'plugin-domain' ),
 					'europe' => __( 'Europe', 'plugin-domain' ),
 					'africa' => __( 'Africa', 'plugin-domain' ),
-					'australia-oceania' => __( 'Australia/Oceania', 'plugin-domain' ),
+					'australia%2Foceania' => __( 'Australia/Oceania', 'plugin-domain' ),
 				],
 				'default' => [ 'north-america' ],
 			]
@@ -88,20 +87,27 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 		);
 
 		$this->end_controls_section();
-
 	}
 
 	protected function render() {
 		$continents = $this->get_settings( 'continents' );
 		$dark = $this->get_settings( 'dark_mode_continent' );
-		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
+		$list = '';
+		foreach($continents as $cont){
+			$list .= str_replace('-',' ',$cont).', ';
+		}
+		$shortcode = do_shortcode('[zone-covid19 continent="'.$list.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 
 	public function render_plain_content() {
 		$continents = $this->get_settings( 'continents' );
 		$dark = $this->get_settings( 'dark_mode_continent' );
-		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
+		$list = '';
+		foreach($continents as $cont){
+			$list .= str_replace('-',' ',$cont).', ';
+		}
+		$shortcode = do_shortcode('[zone-covid19 continent="'.$list.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 

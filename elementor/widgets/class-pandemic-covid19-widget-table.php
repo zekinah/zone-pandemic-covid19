@@ -37,7 +37,7 @@ class Pandemic_Covid19_Widget_Table extends \Elementor\Widget_Base
 	}
 
 	public function get_icon() {
-		return 'eicon-table';
+		return 'fa fa-table';
 	}
 
 	public function get_categories() {

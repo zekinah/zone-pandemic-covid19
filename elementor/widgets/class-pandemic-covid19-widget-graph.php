@@ -29,15 +29,15 @@ class Pandemic_Covid19_Widget_Graph extends \Elementor\Widget_Base
 {
 
 	public function get_name() {
-		return 'Graph';
+		return 'History Graph';
 	}
 
 	public function get_title() {
-		return __( 'Graph', 'pandemic-covid19' );
+		return __( 'History Graph', 'pandemic-covid19' );
 	}
 
 	public function get_icon() {
-		return 'eicon-integration';
+		return 'fa fa-line-chart';
 	}
 
 	public function get_categories() {
