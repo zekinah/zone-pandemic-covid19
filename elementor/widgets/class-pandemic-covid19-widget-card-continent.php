@@ -29,11 +29,11 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 {
 
 	public function get_name() {
-		return 'Continent(s) Card';
+		return 'Continent Card';
 	}
 
 	public function get_title() {
-		return __( 'Continent(s) Card', 'pandemic-covid19' );
+		return __( 'Continent Card', 'pandemic-covid19' );
 	}
 
 	public function get_icon() {
@@ -53,14 +53,14 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'section_shortcode',
 			[
-				'label' => __( 'Content', 'pandemic-covid19' ),
+				'label' => __( 'Contents', 'pandemic-covid19' ),
 			]
 		);
 
 		$this->add_control(
 			'continents',
 			[
-				'label' => __( 'Show Elements', 'plugin-domain' ),
+				'label' => __( 'Show Continents', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::SELECT2,
 				'multiple' => true,
 				'options' => [
@@ -71,19 +71,19 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 					'africa' => __( 'Africa', 'plugin-domain' ),
 					'australia-oceania' => __( 'Australia/Oceania', 'plugin-domain' ),
 				],
-				'default' => [ 'North America' ],
+				'default' => [ 'north-america' ],
 			]
 		);
 
 		$this->add_control(
-			'dark_mode',
+			'dark_mode_continent',
 			[
 				'label' => __( 'Dark Mode', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'pandemic-covid19' ),
 				'label_off' => __( 'No', 'pandemic-covid19' ),
-				'return_value' => 'No',
-				'default' => 'No',
+				'return_value' => 'false',
+				'default' => 'false',
 			]
 		);
 
@@ -93,14 +93,14 @@ class Pandemic_Covid19_Widget_Card_Continent extends \Elementor\Widget_Base
 
 	protected function render() {
 		$continents = $this->get_settings( 'continents' );
-		$dark = $this->get_settings( 'dark_mode' );
+		$dark = $this->get_settings( 'dark_mode_continent' );
 		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 
 	public function render_plain_content() {
 		$continents = $this->get_settings( 'continents' );
-		$dark = $this->get_settings( 'dark_mode' );
+		$dark = $this->get_settings( 'dark_mode_continent' );
 		$shortcode = do_shortcode('[zone-covid19 continent="'.$continents.'" dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}

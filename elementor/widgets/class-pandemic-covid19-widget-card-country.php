@@ -53,34 +53,19 @@ class Pandemic_Covid19_Widget_Card_Country extends \Elementor\Widget_Base
 		$this->start_controls_section(
 			'section_shortcode',
 			[
-				'label' => __( 'Content', 'pandemic-covid19' ),
+				'label' => __( 'Contents', 'pandemic-covid19' ),
 			]
 		);
 
 		$this->add_control(
-			'show_elements',
-			[
-				'label' => __( 'Show Elements', 'plugin-domain' ),
-				'type' => \Elementor\Controls_Manager::SELECT2,
-				'multiple' => true,
-				'options' => [
-					'title'  => __( 'Title', 'plugin-domain' ),
-					'description' => __( 'Description', 'plugin-domain' ),
-					'button' => __( 'Button', 'plugin-domain' ),
-				],
-				'default' => [ 'US' ],
-			]
-		);
-
-		$this->add_control(
-			'dark_mode',
+			'dark_mode_country',
 			[
 				'label' => __( 'Dark Mode', 'plugin-domain' ),
 				'type' => \Elementor\Controls_Manager::SWITCHER,
 				'label_on' => __( 'Yes', 'pandemic-covid19' ),
 				'label_off' => __( 'No', 'pandemic-covid19' ),
-				'return_value' => 'No',
-				'default' => 'No',
+				'return_value' => 'false',
+				'default' => 'false',
 			]
 		);
 
@@ -89,13 +74,14 @@ class Pandemic_Covid19_Widget_Card_Country extends \Elementor\Widget_Base
 	}
 
 	protected function render() {
-		$shortcode = $this->get_settings( 'shortcode-form' );
-		$shortcode = do_shortcode('[zone-covid19]');
+		$dark = $this->get_settings( 'dark_mode_country' );
+		$shortcode = do_shortcode('[zone-covid19 dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 
 	public function render_plain_content() {
-		$shortcode = do_shortcode('[zone-covid19]');
+		$dark = $this->get_settings( 'dark_mode_country' );
+		$shortcode = do_shortcode('[zone-covid19  dark="'.$dark.'"]');
 		echo '<div class="elementor-shortcode">'. $shortcode .' </div>';
 	}
 

@@ -201,10 +201,9 @@ class Pandemic_Covid19_Elementor
 	 */
 	public function init_widgets() {
 
-		// Include Widget files
+		//Include Widget files
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-card-country.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-card-continent.php';
-        require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-table.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-table.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-graph.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-map.php';
