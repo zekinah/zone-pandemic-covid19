@@ -202,6 +202,7 @@ class Pandemic_Covid19_Elementor
 	public function init_widgets() {
 
 		//Include Widget files
+        require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-card-global.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-card-country.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-card-continent.php';
         require_once plugin_dir_path( dirname( __FILE__ ) ) . '/elementor/widgets/class-pandemic-covid19-widget-table.php';
@@ -210,6 +211,7 @@ class Pandemic_Covid19_Elementor
 
         // Register widget
         $widget_manager = \Elementor\Plugin::instance()->widgets_manager;
+		$widget_manager->register_widget_type( new \Pandemic_Covid19_Widget_Card_Global() );
 		$widget_manager->register_widget_type( new \Pandemic_Covid19_Widget_Card_Country() );
 		$widget_manager->register_widget_type( new \Pandemic_Covid19_Widget_Card_Continent() );
         $widget_manager->register_widget_type( new \Pandemic_Covid19_Widget_Table() );
