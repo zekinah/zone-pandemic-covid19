@@ -110,14 +110,12 @@ class Pandemic_Covid19_Elementor
             // Register Widget Scripts
             add_action( 'elementor/frontend/after_register_scripts', array(&$this, 'widget_scripts') );
             // Register Widget Catergory
-            add_action( 'elementor/elements/categories_registered', array(&$this,'add_elementor_widget_categories') );
+			add_action( 'elementor/elements/categories_registered', array(&$this,'add_elementor_widget_categories') );
+			// Check for required Elementor version
+			if ( ! version_compare( ELEMENTOR_VERSION, $this->elementor_version, '>=' ) ) {
+				add_action( 'admin_notices', array(&$this, 'admin_notice_minimum_elementor_version') );
+			}
         }
-
-		// Check for required Elementor version
-		if ( ! version_compare( ELEMENTOR_VERSION, $this->elementor_version, '>=' ) ) {
-			add_action( 'admin_notices', array(&$this, 'admin_notice_minimum_elementor_version') );
-		}
-
 		// Check for required PHP version
 		if ( version_compare( PHP_VERSION, $this->php_version, '<' ) ) {
 			add_action( 'admin_notices', array(&$this, 'admin_notice_minimum_php_version') );
