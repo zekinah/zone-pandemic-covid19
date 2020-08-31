@@ -83,7 +83,7 @@ class Pandemic_Covid19 {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
-
+		$this->define_elementor_hooks();
 	}
 
 	/**
@@ -126,6 +126,12 @@ class Pandemic_Covid19 {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-pandemic-covid19-public.php';
+
+		/**
+		 * The class responsible for defining all actions that loads the elementor integration
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'elementor/class-pandemic-covid19-elementor.php';
 
 		$this->loader = new Pandemic_Covid19_Loader();
 
@@ -177,6 +183,19 @@ class Pandemic_Covid19 {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
+
+	}
+
+	/**
+	 * Register all of the hooks related to the elementor-facing functionality
+	 * of the plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 */
+	private function define_elementor_hooks() {
+
+		$plugin_public = new Pandemic_Covid19_Elementor( $this->get_plugin_name(), $this->get_version() );
 
 	}
 
