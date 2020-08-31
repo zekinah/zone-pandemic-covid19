@@ -14,7 +14,7 @@
 ?>
 <div class="container-fluid">
     <h1 class="zone-title text-center">Pandemic Covid-19 Data</h1>
-    <p><strong>Information:</strong> This plugin displays the recorded global data of all for the total statistics of the Covid-19.</p>
+    <p><strong>Information:</strong> This plugin displays the recorded global data of all for the total statistics of the Covid-19. Use shortcode or widgets from elementor to output the latest data.</p>
     <p><strong>Website:</strong> <a href="https://pandemiccovid19.netlify.app/" target="_blank">Pandemic Covid19</a></p>
     <div class="row">
         <div class="col-md-12">
