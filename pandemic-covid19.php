@@ -16,7 +16,7 @@
  * Plugin Name:       Zone Pandemic Covid-19
  * Plugin URI:        https://github.com/zekinah/wp-pandemic-covid19
  * Description:       This plugin provides shortcode that displays the live recorded data of the covid19 in the whole world.
- * Version:           1.0.4
+ * Version:           1.0.5
  * Author:            Zekinah Lecaros
  * Author URI:        zekinahlecaros.com
  * License:           GPL-2.0+
@@ -35,7 +35,7 @@ if ( ! defined( 'WPINC' ) ) {
  * Start at version 1.0.0 and use SemVer - https://semver.org
  * Rename this for your plugin and update it as you release new versions.
  */
-define( 'PANDEMIC_COVID19_VERSION', '1.0.4' );
+define( 'PANDEMIC_COVID19_VERSION', '1.0.5' );
 /**
  * Minimum Elementor Version
  *
