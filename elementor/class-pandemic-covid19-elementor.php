@@ -27,6 +27,23 @@ if ( ! defined( 'WPINC' ) ) {
 
 class Pandemic_Covid19_Elementor
 {
+	/**
+	 * Minimum Elementor Version
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string Minimum Elementor version required to run the plugin integration with elementor.
+	 */
+	const MINIMUM_ELEMENTOR_VERSION = '2.0.0';
+
+	/**
+	 * Minimum PHP Version
+	 *
+	 * @since 1.0.0
+	 *
+	 * @var string Minimum PHP version required to run the plugin integration with elementor.
+	 */
+	const MINIMUM_PHP_VERSION = '7.0';
 
 	/**
 	 * The ID of this plugin.
@@ -71,20 +88,7 @@ class Pandemic_Covid19_Elementor
 	 * @param      string    $plugin_name       The name of this plugin.
 	 * @param      string    $version    The version of this plugin.
 	 */
-	public function __construct($plugin_name, $version)
-	{
-		if ( defined( 'MINIMUM_ELEMENTOR_VERSION' ) ) {
-			$this->elementor_version = MINIMUM_ELEMENTOR_VERSION;
-		} else {
-            $this->elementor_version = '2.0.0';
-        }
-
-		if ( defined( 'MINIMUM_PHP_VERSION' ) ) {
-			$this->php_version = MINIMUM_PHP_VERSION;
-		} else {
-            $this->php_version = '7.0';
-        }
-
+	public function __construct($plugin_name, $version) {
 		$this->plugin_name = $plugin_name;
 		$this->version = $version;
 		$this->deployZoneElementor();
@@ -112,12 +116,12 @@ class Pandemic_Covid19_Elementor
             // Register Widget Catergory
 			add_action( 'elementor/elements/categories_registered', array(&$this,'add_elementor_widget_categories') );
 			// Check for required Elementor version
-			if ( ! version_compare( ELEMENTOR_VERSION, $this->elementor_version, '>=' ) ) {
+			if ( ! version_compare( ELEMENTOR_VERSION, self::MINIMUM_ELEMENTOR_VERSION, '>=' ) ) {
 				add_action( 'admin_notices', array(&$this, 'admin_notice_minimum_elementor_version') );
 			}
         }
 		// Check for required PHP version
-		if ( version_compare( PHP_VERSION, $this->php_version, '<' ) ) {
+		if ( version_compare( PHP_VERSION, self::MINIMUM_PHP_VERSION, '<' ) ) {
 			add_action( 'admin_notices', array(&$this, 'admin_notice_minimum_php_version') );
 		}
     }

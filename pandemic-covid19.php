@@ -36,22 +36,6 @@ if ( ! defined( 'WPINC' ) ) {
  * Rename this for your plugin and update it as you release new versions.
  */
 define( 'PANDEMIC_COVID19_VERSION', '1.0.5' );
-/**
- * Minimum Elementor Version
- *
- * @since 1.0.0
- *
- * @var string Minimum Elementor version required to run the plugin integration with elementor.
- */
-define( 'MINIMUM_ELEMENTOR_VERSION', '2.0.0' );
-/**
- * Minimum PHP Version
- *
- * @since 1.0.0
- *
- * @var string Minimum PHP version required to run the plugin integration with elementor.
- */
-define( 'MINIMUM_PHP_VERSION', '7.0' );
 
 /**
  * The code that runs during plugin activation.
