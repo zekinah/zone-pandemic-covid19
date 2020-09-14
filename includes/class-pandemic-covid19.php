@@ -133,6 +133,12 @@ class Pandemic_Covid19 {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'elementor/class-pandemic-covid19-elementor.php';
 
+		/**
+		 * The class responsible for defining all cli-commands functionality
+		 * side of the site.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-pandemic-covid19-cli.php';
+
 		$this->loader = new Pandemic_Covid19_Loader();
 
 	}
