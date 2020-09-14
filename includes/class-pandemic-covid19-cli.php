@@ -98,10 +98,44 @@ class Pandemic_Covid19_CLI {
 		WP_CLI\Utils\format_items( 'table', $response, array( 'country', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
 	}
 
-	public function dislay_country($args) {
-		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/countries/'. $args[0], array());
+	public function display_country($country) {
+		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/countries/'. $country[0], array());
 		$response = json_decode($get_data, true);
-		WP_CLI\Utils\format_items( 'table', $response, array( 'country', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
+		if (is_array($response)) {
+			if($country[1]) {
+				// Query
+				$default = array('country');
+				$query = explode (",", $country[1] );
+				$merge_query = array_merge($default,$query);
+				WP_CLI\Utils\format_items( 'table', $response, $merge_query);
+			} else {
+				// Show selected parameter
+				WP_CLI\Utils\format_items( 'table', $response, array( 'country', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
+			}
+		} else {
+			WP_CLI::line('Please define the country correctly.');
+		}
+		
+	}
+
+	public function display_continent($continent) {
+		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/continents/'. $continent[0], array());
+		$response = json_decode($get_data, true);
+		if (is_array($response)) {
+			if($continent[1]) {
+				// Query
+				$default = array('continent');
+				$query = explode (",", $continent[1] );
+				$merge_query = array_merge($default,$query);
+				WP_CLI\Utils\format_items( 'table', $response, $merge_query);
+			} else {
+				// Show selected parameter
+				WP_CLI\Utils\format_items( 'table', $response, array( 'continent', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
+			}
+		} else {
+			WP_CLI::line('Please define the continent correctly.');
+		}
+		
 	}
 
 }
