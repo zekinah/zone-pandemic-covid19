@@ -102,10 +102,16 @@ class Pandemic_Covid19_CLI {
 		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/countries/'. $country[0], array());
 		$response = json_decode($get_data, true);
 		if (is_array($response)) {
+			if (! $response[0]) {
+				// If Single Result
+				$temp = array();
+				array_push($temp,$response);
+				$response = $temp;
+			}
 			if($country[1]) {
 				// Query
 				$default = array('country');
-				$query = explode (",", $country[1] );
+				$query = explode(",", $country[1] );
 				$merge_query = array_merge($default,$query);
 				WP_CLI\Utils\format_items( 'table', $response, $merge_query);
 			} else {
@@ -122,10 +128,16 @@ class Pandemic_Covid19_CLI {
 		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/continents/'. $continent[0], array());
 		$response = json_decode($get_data, true);
 		if (is_array($response)) {
-			if($continent[1]) {
+			if (! $response[0]) {
+				// If Single Result
+				$temp = array();
+				array_push($temp,$response);
+				$response = $temp;
+			}
+			if($country[1]) {
 				// Query
 				$default = array('continent');
-				$query = explode (",", $continent[1] );
+				$query = explode(",", $country[1] );
 				$merge_query = array_merge($default,$query);
 				WP_CLI\Utils\format_items( 'table', $response, $merge_query);
 			} else {
