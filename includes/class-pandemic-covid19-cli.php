@@ -64,13 +64,7 @@ class Pandemic_Covid19_CLI {
 		$this->plugin_name = 'pandemic-covid19';
 	}
 
-	/**
-	 * Retrieve the version number of the plugin.
-	 *
-	 * @since     1.0.0
-	 * @return    string    The version number of the plugin.
-	 */
-	public function get_version() {
+	public function version() {
 		WP_CLI::line('v' . $this->version);
 	}
 
@@ -92,13 +86,37 @@ class Pandemic_Covid19_CLI {
 		return $result;
 	 }
 
-	public function all() {
-		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/countries', array());
+	/**
+	 *  Show Total Global Cases
+	 * `wp zn_covid19 global`
+	 */
+	public function global($global) {
+		/**
+		 * $global[0] =  // List of Available Queries ('cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests')
+		 */
+		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/all', array());
 		$response = json_decode($get_data, true);
-		WP_CLI\Utils\format_items( 'table', $response, array( 'country', 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
+		$temp = array();
+		array_push($temp,$response);
+		$response = $temp;
+		if($global[0]) {
+			// Custom Query
+			WP_CLI\Utils\format_items( 'table', $response, $global[0]);
+		} else {
+			WP_CLI\Utils\format_items( 'table', $response, array( 'cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests' ) );
+	
+		}
 	}
 
+	/**
+	 *  Show the List of Country and its Covid Datas
+	 * `wp zn_covid19 display_country`
+	 */
 	public function display_country($country) {
+		/**
+		 * $country[0] = // Name of Countries)
+		 * $country[1] = // List of Available Queries ('cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests')
+		 */
 		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/countries/'. $country[0], array());
 		$response = json_decode($get_data, true);
 		if (is_array($response)) {
@@ -109,7 +127,7 @@ class Pandemic_Covid19_CLI {
 				$response = $temp;
 			}
 			if($country[1]) {
-				// Query
+				// Custom Query
 				$default = array('country');
 				$query = explode(",", $country[1] );
 				$merge_query = array_merge($default,$query);
@@ -124,7 +142,15 @@ class Pandemic_Covid19_CLI {
 		
 	}
 
+	/**
+	 *  Show the List of Continent and its Covid Datas
+	 * `wp zn_covid19 display_continent`
+	 */
 	public function display_continent($continent) {
+		/**
+		 * $continent[0] = // Name of Continent(s)
+		 * $continent[1] = // List of Available Queries ('cases', 'todayCases', 'deaths', 'todayDeaths', 'recovered', 'active', 'critical', 'tests')
+		 */
 		$get_data = $this->calldiseaseAPI('GET', 'https://disease.sh/v3/covid-19/continents/'. $continent[0], array());
 		$response = json_decode($get_data, true);
 		if (is_array($response)) {
@@ -134,10 +160,10 @@ class Pandemic_Covid19_CLI {
 				array_push($temp,$response);
 				$response = $temp;
 			}
-			if($country[1]) {
-				// Query
+			if($continent[1]) {
+				// Custom Query
 				$default = array('continent');
-				$query = explode(",", $country[1] );
+				$query = explode(",", $continent[1] );
 				$merge_query = array_merge($default,$query);
 				WP_CLI\Utils\format_items( 'table', $response, $merge_query);
 			} else {
