@@ -68,7 +68,7 @@ class Pandemic_Covid19_CLI {
 		WP_CLI::line('v' . $this->version);
 	}
 
-	public function calldiseaseAPI($method, $url, $data){
+	private function calldiseaseAPI($method, $url, $data){
 		$curl = curl_init();
 
 		$url = sprintf("%s?%s", $url, http_build_query($data));
