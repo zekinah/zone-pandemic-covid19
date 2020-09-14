@@ -56,6 +56,18 @@ An alternative for shortcode to output the data.
 * History Graph
 * Heat Map
 
+## WP-CLI Commands
+CLI version to get tabular form of Covid19.
+
+__Synopsis__ - `wp zn_covid19 <command>` <br>
+__Help__ - `wp zn_covid19 --help`
+
+__Subcommands__
+* `display_continent` - Show the List of Continent and its Covid Datas
+* `display_country` - Show the List of Country and its Covid Datas
+* `global` - Show Total Global Cases
+* `version` - Show the plugin version
+
 ## Installation
 
 1. Upload `zone-pandemic-covid-19` to the `/wp-content/plugins/` directory

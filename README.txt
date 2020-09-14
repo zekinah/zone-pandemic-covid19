@@ -48,6 +48,18 @@ An alternative for shortcode to output the data.
 * History Graph
 * Heat Map
 
+== WP-CLI Commands ==
+CLI version to get tabular form of Covid19.
+
+__Synopsis__ - `wp zn_covid19 <command>` <br>
+__Help__ - `wp zn_covid19 --help`
+
+__Subcommands__
+* `display_continent` - Show the List of Continent and its Covid Datas
+* `display_country` - Show the List of Country and its Covid Datas
+* `global` - Show Total Global Cases
+* `version` - Show the plugin version
+
 == API used == 
 
 * [Disease SH](https://github.com/disease-sh/API) - [Privacy](https://github.com/NovelCOVID/API/blob/master/privacy.md)
@@ -96,6 +108,10 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 8. Result of the Shortcode for the World Heat Map.
 
 == Changelog ==
+= 1.0.6 =
+* Added WP-CLI Commands (WP-CLI is required on server*)
+    * `wp zn_covid19 --help` to show available commands
+
 = 1.0.5 =
 * Elementor Integration
 
@@ -108,4 +124,4 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 * Added World Heat Map Cases ShortCode
 
 = 1.0.0 =
-* Intial Release
+* Initial Release

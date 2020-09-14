@@ -64,6 +64,10 @@ class Pandemic_Covid19_CLI {
 		$this->plugin_name = 'pandemic-covid19';
 	}
 
+	/**
+	 *  Show the plugin version
+	 * `wp zn_covid19 global`
+	 */
 	public function version() {
 		WP_CLI::line('v' . $this->version);
 	}
