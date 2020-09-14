@@ -59,14 +59,27 @@ An alternative for shortcode to output the data.
 ## WP-CLI Commands
 CLI version to get tabular form of Covid19.
 
-__Synopsis__ - `wp zn_covid19 <command>` <br>
-__Help__ - `wp zn_covid19 --help`
+__Synopsis__ - `wp zn_covid19 <command> <parameter>` <br>
+__Help__ - `wp zn_covid19 --help` <br>
+__Parameter available__ - `cases, todayCases, deaths, todayDeaths, recovered, active, critical, tests`
 
 __Subcommands__
 * `display_continent` - Show the List of Continent and its Covid Datas
 * `display_country` - Show the List of Country and its Covid Datas
 * `global` - Show Total Global Cases
 * `version` - Show the plugin version
+
+#### Example
+```
+// Displays the list of Continent
+wp zn_covid19 display_continent
+
+// Displays the covid19 data of a continent
+wp zn_covid19 display_continent 'North America' 
+
+// Displays the cases for today of continent
+wp zn_covid19 display_continent 'North America' todayCases 
+```
 
 ## Installation
 
