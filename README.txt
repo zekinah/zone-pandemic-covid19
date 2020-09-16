@@ -48,7 +48,7 @@ An alternative for shortcode to output the data.
 * History Graph
 * Heat Map
 
-== WP-CLI Commands == (WP-CLI is required on server*)
+== WP-CLI Commands (WP-CLI is required on server*) ==
 CLI version to get tabular form of Covid19.
 
 __Synopsis__ - `wp zn_covid19 <command>` <br>
@@ -62,7 +62,7 @@ __Subcommands__
 * `version` - Show the plugin version
 
 #### Example
-```
+`
 // Displays the list of Continent
 wp zn_covid19 display_continent
 
@@ -71,7 +71,7 @@ wp zn_covid19 display_continent 'North America'
 
 // Displays the cases for today of continent
 wp zn_covid19 display_continent 'North America' todayCases 
-```
+`
 
 == API used == 
 
