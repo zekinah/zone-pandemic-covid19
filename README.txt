@@ -123,6 +123,9 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 9. Result of the WP-CLI Command showing the global data.
 
 == Changelog ==
+= 1.0.7 =
+* Fixed Minor Bugs when the `WP_DEBUG` is on.
+
 = 1.0.6 =
 * Added WP-CLI Commands (WP-CLI is required on server*)
     * `wp zn_covid19 --help` to show available commands
