@@ -155,6 +155,9 @@ table#tbl-reviewlinks td.url-link {
   }
 }
 /*Dashboard Widget CSS*/
+.zn-title {
+  width: 100%;
+}
 .zn-loading {
     padding: 25px;
 }
