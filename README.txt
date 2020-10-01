@@ -1,7 +1,7 @@
 === Zone Pandemic Covid19 ===
 Contributors: zekinah
 Donate link: https://www.buymeacoffee.com/zekinah
-Tags: covid19, covid-19, corona virus, coronavirus, report 
+Tags: covid19, covid-19, corona virus, coronavirus, elementor, report
 Requires at least: 3.0.1
 Tested up to: 5.5
 Requires PHP: 5.6 or higher
@@ -48,7 +48,7 @@ An alternative for shortcode to output the data.
 * History Graph
 * Heat Map
 
-== WP-CLI Commands (WP-CLI is required on server*) ==
+== WP-CLI Commands (WP-CLI is required on server) ==
 CLI version to get tabular form of Covid19.
 
 __Synopsis__ - `wp zn_covid19 <command>` <br>
@@ -123,6 +123,9 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 9. Result of the WP-CLI Command showing the global data.
 
 == Changelog ==
+= 1.0.8 =
+* CSS Tweaks.
+
 = 1.0.7 =
 * Fixed Minor Bugs when the `WP_DEBUG` is on.
 

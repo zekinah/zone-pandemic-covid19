@@ -9,13 +9,12 @@
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/zone-pandemic-covid-19?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19?style=flat-square)
 
-Tags: covid19, covid-19, corona virus, coronavirus, report 
-Requires at least: 3.0.1
-Tested up to: 5.5
-Requires PHP: 5.6 or higher
-Stable tag: 1.0.4
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 3.0.1 <br>
+Tested up to: 5.5 <br>
+Requires PHP: 5.6 or higher <br>
+Stable tag: 1.0.4 <br>
+License: GPLv2 or later <br>
+License URI: http://www.gnu.org/licenses/gpl-2.0.html <br>
 
 This plugin provides shortcode and widgets that can displays the latest data of the covid19 in the whole world.
 
@@ -56,7 +55,7 @@ An alternative for shortcode to output the data.
 * History Graph
 * Heat Map
 
-## WP-CLI Commands
+## WP-CLI Commands (WP-CLI is required on server)
 CLI version to get tabular form of Covid19.
 
 __Synopsis__ - `wp zn_covid19 <command> <parameter>` <br>
@@ -95,6 +94,7 @@ wp zn_covid19 display_continent 'North America' todayCases
 * Thank you for the third party libraries that is used into this plugin.
     * [Bulma](https://bulma.io/)
     * [Amchart](https://www.amcharts.com/)
+    * [DataTable](https://datatables.net/)
 
 ## Contributor
 
