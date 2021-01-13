@@ -10,9 +10,9 @@
 ![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19?style=flat-square)
 
 Requires at least: 3.0.1 <br>
-Tested up to: 5.5 <br>
-Requires PHP: 5.6 or higher <br>
-Stable tag: 1.0.4 <br>
+Tested up to: 5.6 <br>
+Requires PHP: 7 or higher <br>
+Stable tag: 1.0.5 <br>
 License: GPLv2 or later <br>
 License URI: http://www.gnu.org/licenses/gpl-2.0.html <br>
 
