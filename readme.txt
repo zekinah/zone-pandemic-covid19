@@ -3,9 +3,9 @@ Contributors: zekinah
 Donate link: https://www.buymeacoffee.com/zekinah
 Tags: covid19, covid-19, corona virus, coronavirus, elementor, report
 Requires at least: 3.0.1
-Tested up to: 5.5
-Requires PHP: 5.6 or higher
-Stable tag: 1.0.1
+Tested up to: 5.6
+Requires PHP: 7 or higher
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -123,6 +123,9 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 9. Result of the WP-CLI Command showing the global data.
 
 == Changelog ==
+= 1.0.9 =
+* Compatibility for WP5.6
+
 = 1.0.8 =
 * CSS Tweaks.
 
