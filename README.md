@@ -8,6 +8,9 @@
 ![WordPress Plugin Rating](https://img.shields.io/wordpress/plugin/stars/zone-pandemic-covid-19?style=flat-square)
 ![WordPress Plugin Downloads](https://img.shields.io/wordpress/plugin/dt/zone-pandemic-covid-19?style=flat-square)
 ![GitHub](https://img.shields.io/github/license/zekinah/zone-pandemic-covid19?style=flat-square)
+<a href="https://github.com/soroushchehresa/awesome-coronavirus" target="_blank">
+    <img src="https://awesome.re/mentioned-badge-flat.svg" alt="Mentioned in Awesome Coronavirus" />
+</a>
 
 Requires at least: 3.0.1 <br>
 Tested up to: 5.5 <br>
