@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Zone Pandemic Covid-19
  * Plugin URI:        https://github.com/zekinah/wp-pandemic-covid19
- * Description:       This plugin provides shortcode that displays the live recorded data of the covid19 in the whole world.
+ * Description:       This plugin provides shortcode that displays the live recorded data of the covid19.
  * Version:           1.1.0
  * Author:            Zekinah Lecaros
  * Author URI:        zekinahlecaros.com

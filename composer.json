@@ -1,6 +1,6 @@
 {
     "name": "zekinah/zone-pandemic-covid19",
-    "description": "This plugin provides data of how many patient(s) are active, confirmed, dead or recovered, in a world, and the continent or country assigned.",
+    "description": "This plugin provides shortcode that displays the live recorded data of the covid19.",
     "keywords": ["wordpress", "plugin", "wordpress-plugin"],
     "homepage": "https://github.com/zekinah/zone-pandemic-covid19",
     "license": "GPLv2",
