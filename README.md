@@ -13,9 +13,9 @@
 </a>
 
 Requires at least: 3.0.1 <br>
-Tested up to: 5.6 <br>
+Tested up to: 5.7.1 <br>
 Requires PHP: 7 or higher <br>
-Stable tag: 1.0.5 <br>
+Stable tag: 1.0.9 <br>
 License: GPLv2 or later <br>
 License URI: http://www.gnu.org/licenses/gpl-2.0.html <br>
 

@@ -3,9 +3,9 @@ Contributors: zekinah
 Donate link: https://www.buymeacoffee.com/zekinah
 Tags: covid19, covid-19, corona virus, coronavirus, elementor, report
 Requires at least: 3.0.1
-Tested up to: 5.6
+Tested up to: 5.7.1
 Requires PHP: 7 or higher
-Stable tag: 1.0.5
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
