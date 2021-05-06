@@ -123,8 +123,12 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 9. Result of the WP-CLI Command showing the global data.
 
 == Changelog ==
+= 1.1.0 =
+* Compatibility for WP 5.7.1
+* Clean
+
 = 1.0.9 =
-* Compatibility for WP5.6
+* Compatibility for WP 5.6
 
 = 1.0.8 =
 * CSS Tweaks.
@@ -148,4 +152,4 @@ The API that we are using on this plugin was blocked in Russian Government Regul
 * Added World Heat Map Cases ShortCode
 
 = 1.0.0 =
-* Initial Release
+* Initial Released
