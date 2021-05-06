@@ -76,9 +76,6 @@ class Pandemic_Covid19_Public {
 		wp_enqueue_script('jquery');
 		wp_enqueue_script( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'js/pandemic-covid19-public.js', array( 'jquery' ), $this->version, false );
 		wp_enqueue_script('zone-pandemic-covid19-datatable-js', plugin_dir_url(__FILE__) . 'js/datatable/jquery.dataTables.js', array('jquery'), $this->version);
-		// wp_enqueue_script('zone-pandemic-covid19-core', plugin_dir_url(__FILE__)  . 'js/amchart/core.js', array(), $this->version);
-		// wp_enqueue_script('zone-pandemic-covid19-chart', plugin_dir_url(__FILE__)  . 'js/amchart/chart.js', array(), $this->version);
-		// wp_enqueue_script('zone-pandemic-covid19-animated', plugin_dir_url(__FILE__)  . 'js/amchart/animated.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-core', 'https://cdn.amcharts.com/lib/4/core.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-chart', 'https://cdn.amcharts.com/lib/4/charts.js', array(), $this->version);
 		wp_enqueue_script('zone-pandemic-covid19-animated', 'https://cdn.amcharts.com/lib/4/themes/animated.js', array(), $this->version);
